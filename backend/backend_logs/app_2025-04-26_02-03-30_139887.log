@@ -1,3 +1,0 @@
-2025-04-26 02:03:38.384 | INFO     | app.main:lifespan:15 - Starting application...
-2025-04-26 02:03:38.385 | ERROR    | app.logging_setup:start_metrics_server:85 - Failed to start Prometheus metrics server: 'Settings' object has no attribute 'PROMETHEUS_PORT'
-2025-04-26 02:03:38.385 | WARNING  | app.cache:init_redis_pool:26 - Attempt 1/3 failed to connect to Redis at : Redis URL must specify one of the following schemes (redis://, rediss://, unix://)

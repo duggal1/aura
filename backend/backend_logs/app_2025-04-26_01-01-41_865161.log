@@ -1,6 +1,0 @@
-2025-04-26 01:01:48.889 | INFO     | app.main:lifespan:15 - Starting application...
-2025-04-26 01:01:48.895 | INFO     | app.logging_setup:start_metrics_server:81 - Prometheus metrics server started on port 8001
-2025-04-26 01:01:48.898 | ERROR    | app.cache:init_redis_pool:24 - Failed to connect to Redis (via redis-py) at redis://redis:6379/0: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
-2025-04-26 01:01:54.242 | INFO     | app.emotion_pipeline:load_emotion_model:86 - Loaded models on device 0.
-2025-04-26 01:01:54.276 | INFO     | app.llm_service:configure_genai:19 - Google Generative AI client configured. SDK version: 1.12.1
-2025-04-26 01:01:54.277 | INFO     | app.main:lifespan:20 - Startup complete.

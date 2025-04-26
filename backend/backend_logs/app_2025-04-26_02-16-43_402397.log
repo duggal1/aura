@@ -1,9 +1,0 @@
-2025-04-26 02:16:51.700 | INFO     | app.main:lifespan:14 - Starting application...
-2025-04-26 02:16:51.710 | INFO     | app.logging_setup:start_metrics_server:81 - Prometheus metrics server started on port 8001
-2025-04-26 02:16:51.716 | INFO     | app.cache:init_redis_pool:27 - Successfully connected to Redis at redis://localhost:6379/0
-2025-04-26 02:16:54.141 | INFO     | app.emotion_pipeline:load_models:51 - Loaded emotion model labels: dict_values(['admiration', 'amusement', 'anger', 'annoyance', 'approval', 'caring', 'confusion', 'curiosity', 'desire', 'disappointment', 'disapproval', 'disgust', 'embarrassment', 'excitement', 'fear', 'gratitude', 'grief', 'joy', 'love', 'nervousness', 'optimism', 'pride', 'realization', 'relief', 'remorse', 'sadness', 'surprise', 'neutral'])
-2025-04-26 02:16:54.181 | INFO     | app.llm_service:configure_genai:25 - Google GenAI client configured.
-2025-04-26 02:16:54.182 | INFO     | app.main:lifespan:19 - Startup complete.
-2025-04-26 02:17:10.559 | INFO     | app.main:lifespan:21 - Shutting down...
-2025-04-26 02:17:10.561 | ERROR    | app.cache:close_redis_pool:49 - Error closing Redis connection pool: 'Redis' object has no attribute 'wait_closed'
-2025-04-26 02:17:10.561 | INFO     | app.main:lifespan:23 - Shutdown complete.

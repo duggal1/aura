@@ -1,3 +1,0 @@
-2025-04-26 15:52:45.586 | INFO     | app.main:lifespan:14 - Starting application...
-2025-04-26 15:52:45.589 | INFO     | app.logging_setup:start_metrics_server:76 - Prometheus metrics server started on port 8001
-2025-04-26 15:52:45.592 | INFO     | app.cache:init_redis_pool:30 - Successfully connected to Redis at redis://localhost:6379/0

@@ -101,3 +101,4 @@ MIT
 - Emotion detection model: [j-hartmann/emotion-english-distilroberta-base](https://huggingface.co/j-hartmann/emotion-english-distilroberta-base)
 - Sarcasm detection: [jkhan447/sarcasm-detection-RoBerta-base-POS](https://huggingface.co/jkhan447/sarcasm-detection-RoBerta-base-POS)
 - Next.js and FastAPI communities
+

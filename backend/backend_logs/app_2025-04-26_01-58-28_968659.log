@@ -1,5 +1,0 @@
-2025-04-26 01:58:36.613 | INFO     | app.main:lifespan:15 - Starting application...
-2025-04-26 01:58:36.613 | ERROR    | app.logging_setup:start_metrics_server:85 - Failed to start Prometheus metrics server: 'Settings' object has no attribute 'PROMETHEUS_PORT'
-2025-04-26 01:58:36.613 | ERROR    | app.cache:init_redis_pool:24 - Failed to connect to Redis (via redis-py) at : Redis URL must specify one of the following schemes (redis://, rediss://, unix://)
-2025-04-26 01:58:39.731 | INFO     | app.llm_service:configure_genai:25 - Google GenAI client configured.
-2025-04-26 01:58:39.731 | INFO     | app.main:lifespan:24 - Startup complete.
