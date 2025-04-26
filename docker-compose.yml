@@ -5,6 +5,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+    image: harshitduggal1/emotional-model-backend:latest # Or choose a specific version tag like :1.0
     container_name: emotion-llm-backend-prodlike # Changed name slightly
     restart: unless-stopped
     ports:
@@ -16,7 +17,7 @@ services:
       # --- Development Volume Mount (Optional - uncomment for hot-reloading) ---
       # Mount your local 'app' folder into the container.
       # Requires '--reload' flag in uvicorn CMD in this file (NOT Dockerfile CMD).
-      #- ./backend/app:/home/appuser/app/app
+      #- ./backend/app:/home/appuser/app # Corrected path if uncommented
 
       # --- Log Volume ---
       # Mount a volume for persistent logs outside the container

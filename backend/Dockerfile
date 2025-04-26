@@ -38,7 +38,10 @@ WORKDIR /home/appuser
 # inside the WORKDIR. This makes 'app' recognizable as a package.
 COPY ./app ./app
 
-# Corrected: Ensure the appuser owns the work directory and the 'app' subdir
+# Create the log directory *before* changing ownership
+RUN mkdir -p /home/appuser/app/backend_logs
+
+# Corrected: Ensure the appuser owns the work directory, the 'app' subdir, and the log dir
 RUN chown -R appuser:appuser /home/appuser
 
 # Switch to the non-root user
