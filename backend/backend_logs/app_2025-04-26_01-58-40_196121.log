@@ -1,0 +1,11 @@
+2025-04-26 01:58:47.685 | INFO     | app.main:lifespan:15 - Starting application...
+2025-04-26 01:58:47.686 | ERROR    | app.logging_setup:start_metrics_server:85 - Failed to start Prometheus metrics server: 'Settings' object has no attribute 'PROMETHEUS_PORT'
+2025-04-26 01:58:47.686 | ERROR    | app.cache:init_redis_pool:24 - Failed to connect to Redis (via redis-py) at : Redis URL must specify one of the following schemes (redis://, rediss://, unix://)
+2025-04-26 01:58:51.166 | INFO     | app.llm_service:configure_genai:25 - Google GenAI client configured.
+2025-04-26 01:58:51.167 | INFO     | app.main:lifespan:24 - Startup complete.
+2025-04-26 01:58:51.173 | INFO     | app.main:chat_endpoint:78 - [ReqID: req_de438bfb] Chat request: '“Sometimes, when the rain taps my window at 3 a.m....'
+2025-04-26 01:58:51.173 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-26 01:58:51.174 | INFO     | app.utils:wrapper:76 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 01:58:52.448 | INFO     | app.utils:wrapper:86 - 'Advanced Emotion Analysis' failed with ValueError in 1.2748 seconds.
+2025-04-26 01:58:52.449 | ERROR    | app.main:chat_endpoint:103 - [ReqID: req_de438bfb] Emotion analysis error: Incorrect label names
+2025-04-26 02:01:28.592 | INFO     | app.main:lifespan:26 - Shutting down...

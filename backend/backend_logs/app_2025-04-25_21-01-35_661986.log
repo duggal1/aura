@@ -1,0 +1,7 @@
+2025-04-25 21:01:43.701 | INFO     | app.main:lifespan:15 - Starting application...
+2025-04-25 21:01:43.706 | INFO     | app.logging_setup:start_metrics_server:81 - Prometheus metrics server started on port 8001
+2025-04-25 21:01:43.720 | ERROR    | app.cache:init_redis_pool:24 - Failed to connect to Redis (via redis-py) at redis://redis:6379/0: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2025-04-25 21:01:43.721 | INFO     | app.emotion_pipeline:load_emotion_model:22 - Loading emotion model: SamLowe/roberta-base-go_emotions...
+2025-04-25 21:01:43.743 | INFO     | app.emotion_pipeline:load_emotion_model:34 - Using device: mps for emotion model.
+2025-04-25 21:03:13.038 | INFO     | app.emotion_pipeline:load_emotion_model:51 - Successfully loaded emotion model 'SamLowe/roberta-base-go_emotions' and secondary LLM on mps.
+2025-04-25 21:03:13.040 | CRITICAL | app.llm_service:configure_genai:17 - FATAL: Failed to configure Google Generative AI client: Client.__init__() got an unexpected keyword argument 'speculative_decoding'

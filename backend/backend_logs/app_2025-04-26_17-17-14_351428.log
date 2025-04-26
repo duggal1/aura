@@ -1,0 +1,32 @@
+2025-04-26 17:17:24.950 | INFO     | app.main:lifespan:14 - Starting application...
+2025-04-26 17:17:24.985 | INFO     | app.logging_setup:start_metrics_server:76 - Prometheus metrics server started on port 8001
+2025-04-26 17:17:24.996 | INFO     | app.cache:init_redis_pool:30 - Successfully connected to Redis at redis://localhost:6379/0
+2025-04-26 17:17:24.997 | INFO     | app.emotion_pipeline:load_models:24 - Attempting to load models on device: cpu
+2025-04-26 17:17:27.845 | INFO     | app.emotion_pipeline:load_models:36 - Successfully loaded emotion model: j-hartmann/emotion-english-distilroberta-base
+2025-04-26 17:17:27.845 | INFO     | app.emotion_pipeline:load_models:38 - Loaded emotion model labels from config: ['anger', 'disgust', 'fear', 'joy', 'neutral', 'sadness', 'surprise']
+2025-04-26 17:17:28.550 | INFO     | app.emotion_pipeline:load_models:51 - Successfully loaded sentiment model.
+2025-04-26 17:17:29.734 | INFO     | app.emotion_pipeline:load_models:66 - Successfully loaded sarcasm model: jkhan447/sarcasm-detection-RoBerta-base-POS
+2025-04-26 17:17:29.735 | INFO     | app.emotion_pipeline:load_models:68 - Loaded sarcasm model labels from config: ['LABEL_0', 'LABEL_1']
+2025-04-26 17:17:29.776 | INFO     | app.llm_service:configure_genai:16 - Google GenAI client configured.
+2025-04-26 17:17:29.778 | INFO     | app.main:lifespan:22 - Redis cache cleared on startup.
+2025-04-26 17:17:29.778 | INFO     | app.main:lifespan:25 - Startup complete.
+2025-04-26 17:17:30.276 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_1b618600] Chat request: 'hey sweetheart...'
+2025-04-26 17:17:30.285 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 17:17:30.285 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 17:17:30.438 | INFO     | app.emotion_pipeline:map_emotions:138 - Raw distribution: {'joy': 0.7988248467445374, 'neutral': 0.09526118636131287, 'surprise': 0.08774566650390625, 'sadness': 0.010598565451800823, 'anger': 0.005558525677770376, 'disgust': 0.0012087879003956914, 'fear': 0.0008024148410186172}
+2025-04-26 17:17:30.438 | INFO     | app.emotion_pipeline:map_emotions:139 - Mapped distribution: {'happy': 0.79882, 'neutral': 0.09526, 'surprised': 0.08775, 'sad': 0.0106, 'angry': 0.00556, 'disgusted': 0.00121, 'fearful': 0.0008}
+2025-04-26 17:17:30.439 | INFO     | app.emotion_pipeline:analyze_emotions:295 - Emotion analysis successful: Primary=happy (0.799)
+2025-04-26 17:17:30.441 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.1559 seconds.
+2025-04-26 17:17:30.441 | INFO     | app.utils:wrapper:107 - Starting 'LLM Emotion + Response'...
+2025-04-26 17:17:32.784 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 17:17:32.785 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 17:17:32.876 | INFO     | app.emotion_pipeline:map_emotions:138 - Raw distribution: {'joy': 0.9794149994850159, 'surprise': 0.010482695885002613, 'neutral': 0.005457866471260786, 'sadness': 0.003167416201904416, 'anger': 0.0007501328364014626, 'disgust': 0.000441042153397575, 'fear': 0.0002859046508092433}
+2025-04-26 17:17:32.876 | INFO     | app.emotion_pipeline:map_emotions:139 - Mapped distribution: {'happy': 0.97941, 'surprised': 0.01048, 'neutral': 0.00546, 'sad': 0.00317, 'angry': 0.00075, 'disgusted': 0.00044, 'fearful': 0.00029}
+2025-04-26 17:17:32.910 | INFO     | app.emotion_pipeline:map_emotions:138 - Raw distribution: {'joy': 0.9787003397941589, 'neutral': 0.010250335559248924, 'surprise': 0.00541643425822258, 'sadness': 0.00343026383779943, 'disgust': 0.0010287307668477297, 'anger': 0.0008706479566171765, 'fear': 0.00030336782219819725}
+2025-04-26 17:17:32.911 | INFO     | app.emotion_pipeline:map_emotions:139 - Mapped distribution: {'happy': 0.9787, 'neutral': 0.01025, 'surprised': 0.00542, 'sad': 0.00343, 'disgusted': 0.00103, 'angry': 0.00087, 'fearful': 0.0003}
+2025-04-26 17:17:32.911 | INFO     | app.emotion_pipeline:analyze_emotions:295 - Emotion analysis successful: Primary=happy (0.979)
+2025-04-26 17:17:32.934 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.1503 seconds.
+2025-04-26 17:17:32.935 | INFO     | app.llm_service:validate_response:52 - Response validated: matches expected emotion happy
+2025-04-26 17:17:32.935 | INFO     | app.utils:wrapper:117 - 'LLM Emotion + Response' completed successfully in 2.4946 seconds.
+2025-04-26 17:17:32.948 | INFO     | app.main:chat_endpoint:125 - [ReqID: req_1b618600] Response cached.
+2025-04-26 17:17:32.948 | INFO     | app.main:chat_endpoint:134 - [ReqID: req_1b618600] Processed in 2.6721s.

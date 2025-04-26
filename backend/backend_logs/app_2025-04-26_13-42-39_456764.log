@@ -1,0 +1,20 @@
+2025-04-26 13:42:47.857 | INFO     | app.main:lifespan:14 - Starting application...
+2025-04-26 13:42:47.867 | INFO     | app.logging_setup:start_metrics_server:76 - Prometheus metrics server started on port 8001
+2025-04-26 13:42:47.872 | INFO     | app.cache:init_redis_pool:27 - Successfully connected to Redis at redis://localhost:6379/0
+2025-04-26 13:42:49.127 | INFO     | app.emotion_pipeline:load_models:69 - Loaded emotion model: j-hartmann/emotion-english-distilroberta-base
+2025-04-26 13:42:49.826 | INFO     | app.emotion_pipeline:load_models:80 - Loaded sentiment model
+2025-04-26 13:42:50.950 | INFO     | app.emotion_pipeline:load_models:94 - Loaded sarcasm model: jkhan447/sarcasm-detection-RoBerta-base-POS
+2025-04-26 13:42:50.950 | INFO     | app.emotion_pipeline:load_models:100 - Loaded emotion model labels: ['anger', 'disgust', 'fear', 'joy', 'neutral', 'sadness', 'surprise']
+2025-04-26 13:42:50.988 | INFO     | app.llm_service:configure_genai:16 - Google GenAI client configured.
+2025-04-26 13:42:50.988 | INFO     | app.main:lifespan:22 - Redis cache cleared on startup.
+2025-04-26 13:42:50.989 | INFO     | app.main:lifespan:25 - Startup complete.
+2025-04-26 13:42:50.991 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_5da26b7b] Chat request: 'im feeling lonely as fuck...'
+2025-04-26 13:42:50.993 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 13:42:51.166 | INFO     | app.emotion_pipeline:map_emotions:48 - Raw distribution: {'sadness': 0.9935387969017029}
+2025-04-26 13:42:51.166 | INFO     | app.emotion_pipeline:map_emotions:49 - Mapped distribution: {'sad': 1.0}
+2025-04-26 13:42:51.166 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' failed with ValueError in 0.1729 seconds.
+2025-04-26 13:42:51.166 | ERROR    | app.utils:wrapper:36 - Failure 1/5 in analyze_emotions: Incorrect label names
+2025-04-26 13:42:51.166 | ERROR    | app.main:chat_endpoint:99 - [ReqID: req_5da26b7b] Emotion analysis error: Incorrect label names
+2025-04-26 13:47:10.849 | INFO     | app.main:lifespan:27 - Shutting down...
+2025-04-26 13:47:10.856 | ERROR    | app.cache:close_redis_pool:49 - Error closing Redis connection pool: 'Redis' object has no attribute 'wait_closed'
+2025-04-26 13:47:10.856 | INFO     | app.main:lifespan:29 - Shutdown complete.

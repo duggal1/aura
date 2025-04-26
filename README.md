@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌟 Aura - Emotionally Intelligent AI Framework
 
-## Getting Started
+Aura is a modern starter framework that combines Next.js frontend with a Python FastAPI backend to create emotionally intelligent AI applications. It uses advanced NLP models to detect emotions in user messages and responds with contextually and emotionally appropriate responses.
 
-First, run the development server:
+## ✨ Features
 
+- 🎭 Real-time emotion analysis using state-of-the-art ML models
+- 🧠 Context-aware conversations with emotion memory
+- 🎨 Beautiful, responsive UI with light/dark mode
+- ⚡ High-performance FastAPI backend
+- 🔄 Redis-based caching for quick responses
+- 📊 Built-in emotion visualization
+- 🎯 Sarcasm detection
+- 🤝 Multi-emotion support with intensity scoring
+
+## 🚀 Tech Stack
+
+### Frontend
+- Next.js 15.3
+- React 19
+- TailwindCSS
+- TypeScript
+- Framer Motion for animations
+
+### Backend
+- FastAPI
+- PyTorch
+- Transformers (Hugging Face)
+- Redis for caching
+- Google's Gemini AI
+- Prometheus for metrics
+
+## 🛠 Quick Start
+
+### Prerequisites
+- Node.js 18+ and Bun
+- Python 3.9+
+- Redis server
+- Google AI API key
+
+### Setup
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/duggal1/aura.git
+cd aura
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install frontend dependencies:
+```bash
+bun install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Install backend dependencies:
+```bash
+cd backend
+pip install -r requirements.txt
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Set up environment variables:
+- Create `.env` in project root for frontend
+- Create `.env` in `backend` folder for backend
 
-## Learn More
+5. Start both servers with a single command:
+```bash
+./start-servers.sh
+```
 
-To learn more about Next.js, take a look at the following resources:
+Or run them separately:
+```bash
+# Terminal 1 - Frontend
+bun run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Terminal 2 - Backend
+cd backend
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Visit `http://localhost:3000` to see your app running!
 
-## Deploy on Vercel
+## 🎯 Core Functionality
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Aura's emotion pipeline processes messages through multiple stages:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Primary Emotion Detection**: Uses DistilRoBERTa to classify primary emotions
+2. **Context Analysis**: Considers conversation history
+3. **Sarcasm Detection**: Uses RoBERTa-based model
+4. **Response Generation**: Generates contextually appropriate responses using Gemini AI
+5. **Emotion Validation**: Ensures responses match detected emotions
+
+## 🤝 Contributing
+
+Contributions welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details.
+
+## 📝 License
+
+MIT
+
+## 🙏 Acknowledgments
+
+- Emotion detection model: [j-hartmann/emotion-english-distilroberta-base](https://huggingface.co/j-hartmann/emotion-english-distilroberta-base)
+- Sarcasm detection: [jkhan447/sarcasm-detection-RoBerta-base-POS](https://huggingface.co/jkhan447/sarcasm-detection-RoBerta-base-POS)
+- Next.js and FastAPI communities

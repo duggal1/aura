@@ -1,0 +1,175 @@
+2025-04-26 15:47:09.724 | INFO     | app.main:lifespan:14 - Starting application...
+2025-04-26 15:47:09.730 | INFO     | app.logging_setup:start_metrics_server:76 - Prometheus metrics server started on port 8001
+2025-04-26 15:47:09.732 | INFO     | app.cache:init_redis_pool:30 - Successfully connected to Redis at redis://localhost:6379/0
+2025-04-26 15:47:09.732 | INFO     | app.emotion_pipeline:load_models:24 - Attempting to load models on device: cpu
+2025-04-26 15:47:10.948 | INFO     | app.emotion_pipeline:load_models:36 - Successfully loaded emotion model: j-hartmann/emotion-english-distilroberta-base
+2025-04-26 15:47:10.949 | INFO     | app.emotion_pipeline:load_models:38 - Loaded emotion model labels from config: ['anger', 'disgust', 'fear', 'joy', 'neutral', 'sadness', 'surprise']
+2025-04-26 15:47:12.068 | INFO     | app.emotion_pipeline:load_models:51 - Successfully loaded sentiment model.
+2025-04-26 15:47:13.175 | INFO     | app.emotion_pipeline:load_models:66 - Successfully loaded sarcasm model: jkhan447/sarcasm-detection-RoBerta-base-POS
+2025-04-26 15:47:13.177 | INFO     | app.emotion_pipeline:load_models:68 - Loaded sarcasm model labels from config: ['LABEL_0', 'LABEL_1']
+2025-04-26 15:47:13.211 | INFO     | app.llm_service:configure_genai:17 - Google GenAI client configured.
+2025-04-26 15:47:13.211 | INFO     | app.main:lifespan:22 - Redis cache cleared on startup.
+2025-04-26 15:47:13.212 | INFO     | app.main:lifespan:25 - Startup complete.
+2025-04-26 15:47:13.213 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_b15cb668] Chat request: 'hey...'
+2025-04-26 15:47:13.213 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 15:47:13.213 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 15:47:13.264 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'neutral': 0.805106520652771, 'joy': 0.05087298899888992, 'surprise': 0.04667346552014351, 'disgust': 0.036960601806640625, 'sadness': 0.024387145414948463, 'fear': 0.01948055997490883, 'anger': 0.016518644988536835}
+2025-04-26 15:47:13.264 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'neutral': 0.80511, 'happy': 0.05087, 'surprised': 0.04667, 'disgusted': 0.03696, 'sad': 0.02439, 'fearful': 0.01948, 'angry': 0.01652}
+2025-04-26 15:47:13.264 | INFO     | app.emotion_pipeline:analyze_emotions:281 - Emotion analysis successful: Primary=neutral (0.805)
+2025-04-26 15:47:13.265 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.0515 seconds.
+2025-04-26 15:47:13.265 | INFO     | app.utils:wrapper:107 - Starting 'LLM Emotion + Response'...
+2025-04-26 15:47:15.341 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 15:47:15.341 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 15:47:15.457 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'surprise': 0.5707026720046997, 'joy': 0.2943468987941742, 'neutral': 0.07137143611907959, 'anger': 0.04351885989308357, 'sadness': 0.011567771434783936, 'fear': 0.004318037070333958, 'disgust': 0.00417429069057107}
+2025-04-26 15:47:15.458 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'surprised': 0.5707, 'happy': 0.29435, 'neutral': 0.07137, 'angry': 0.04352, 'sad': 0.01157, 'fearful': 0.00432, 'disgusted': 0.00417}
+2025-04-26 15:47:15.458 | INFO     | app.emotion_pipeline:analyze_emotions:281 - Emotion analysis successful: Primary=surprised (0.571)
+2025-04-26 15:47:15.458 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.1177 seconds.
+2025-04-26 15:47:15.458 | WARNING  | app.llm_service:validate_response:59 - Response emotion mismatch: expected neutral, got surprised
+2025-04-26 15:47:15.459 | WARNING  | app.llm_service:refine_and_respond:107 - Response validation failed on attempt 1. Retrying...
+2025-04-26 15:47:16.164 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 15:47:16.164 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 15:47:16.255 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'surprise': 0.5707026720046997, 'joy': 0.2943468987941742, 'neutral': 0.07137143611907959, 'anger': 0.04351885989308357, 'sadness': 0.011567771434783936, 'fear': 0.004318037070333958, 'disgust': 0.00417429069057107}
+2025-04-26 15:47:16.256 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'surprised': 0.5707, 'happy': 0.29435, 'neutral': 0.07137, 'angry': 0.04352, 'sad': 0.01157, 'fearful': 0.00432, 'disgusted': 0.00417}
+2025-04-26 15:47:16.256 | INFO     | app.emotion_pipeline:analyze_emotions:281 - Emotion analysis successful: Primary=surprised (0.571)
+2025-04-26 15:47:16.258 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.0936 seconds.
+2025-04-26 15:47:16.258 | WARNING  | app.llm_service:validate_response:59 - Response emotion mismatch: expected neutral, got surprised
+2025-04-26 15:47:16.258 | WARNING  | app.llm_service:refine_and_respond:107 - Response validation failed on attempt 2. Retrying...
+2025-04-26 15:47:16.258 | WARNING  | app.llm_service:refine_and_respond:116 - Max validation attempts reached. Using fallback.
+2025-04-26 15:47:16.258 | INFO     | app.utils:wrapper:117 - 'LLM Emotion + Response' completed successfully in 2.9933 seconds.
+2025-04-26 15:47:16.259 | INFO     | app.main:chat_endpoint:125 - [ReqID: req_b15cb668] Response cached.
+2025-04-26 15:47:16.259 | INFO     | app.main:chat_endpoint:134 - [ReqID: req_b15cb668] Processed in 3.0462s.
+2025-04-26 15:47:30.987 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_eba33610] Chat request: 'hey “I don’t even know how to explain this mess I’...'
+2025-04-26 15:47:30.997 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 15:47:30.998 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 15:47:31.179 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'fear': 0.9285853505134583, 'sadness': 0.031241638585925102, 'anger': 0.025762267410755157, 'surprise': 0.007981525734066963, 'joy': 0.0025411408860236406, 'neutral': 0.0022498611360788345, 'disgust': 0.001638190820813179}
+2025-04-26 15:47:31.179 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'fearful': 0.92859, 'sad': 0.03124, 'angry': 0.02576, 'surprised': 0.00798, 'happy': 0.00254, 'neutral': 0.00225, 'disgusted': 0.00164}
+2025-04-26 15:47:31.228 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'fear': 0.9504324197769165, 'anger': 0.019966572523117065, 'sadness': 0.012445559725165367, 'neutral': 0.005769817158579826, 'disgust': 0.005256247241050005, 'surprise': 0.005006397143006325, 'joy': 0.0011229197261855006}
+2025-04-26 15:47:31.229 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'fearful': 0.95042, 'angry': 0.01997, 'sad': 0.01245, 'neutral': 0.00577, 'disgusted': 0.00526, 'surprised': 0.00501, 'happy': 0.00112}
+2025-04-26 15:47:31.229 | INFO     | app.emotion_pipeline:analyze_emotions:281 - Emotion analysis successful: Primary=fearful (0.950)
+2025-04-26 15:47:31.230 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.2328 seconds.
+2025-04-26 15:47:31.230 | INFO     | app.utils:wrapper:107 - Starting 'LLM Emotion + Response'...
+2025-04-26 15:47:34.186 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 15:47:34.187 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 15:47:34.277 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'fear': 0.963266909122467, 'surprise': 0.025652285665273666, 'sadness': 0.0033324393443763256, 'neutral': 0.002565536182373762, 'anger': 0.0025048404932022095, 'disgust': 0.0019374946132302284, 'joy': 0.0007404096540994942}
+2025-04-26 15:47:34.277 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'fearful': 0.96327, 'surprised': 0.02565, 'sad': 0.00333, 'neutral': 0.00257, 'angry': 0.0025, 'disgusted': 0.00194, 'happy': 0.00074}
+2025-04-26 15:47:34.297 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'fear': 0.96101313829422, 'surprise': 0.022112563252449036, 'neutral': 0.005707021802663803, 'sadness': 0.0041548144072294235, 'disgust': 0.003390941070392728, 'anger': 0.0028867218643426895, 'joy': 0.0007348153740167618}
+2025-04-26 15:47:34.297 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'fearful': 0.96101, 'surprised': 0.02211, 'neutral': 0.00571, 'sad': 0.00415, 'disgusted': 0.00339, 'angry': 0.00289, 'happy': 0.00073}
+2025-04-26 15:47:34.298 | INFO     | app.emotion_pipeline:analyze_emotions:281 - Emotion analysis successful: Primary=fearful (0.961)
+2025-04-26 15:47:34.298 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.1129 seconds.
+2025-04-26 15:47:34.299 | INFO     | app.llm_service:validate_response:57 - Response validated: matches expected emotion fearful
+2025-04-26 15:47:34.299 | INFO     | app.utils:wrapper:117 - 'LLM Emotion + Response' completed successfully in 3.0685 seconds.
+2025-04-26 15:47:34.299 | INFO     | app.main:chat_endpoint:125 - [ReqID: req_eba33610] Response cached.
+2025-04-26 15:47:34.299 | INFO     | app.main:chat_endpoint:134 - [ReqID: req_eba33610] Processed in 3.3124s.
+2025-04-26 15:47:52.560 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_253a2296] Chat request: 'yea?...'
+2025-04-26 15:47:52.564 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 15:47:52.565 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 15:47:52.628 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'fear': 0.9669641256332397, 'anger': 0.012429866008460522, 'sadness': 0.006291092839092016, 'neutral': 0.005466184578835964, 'surprise': 0.00428594509139657, 'disgust': 0.00353020871989429, 'joy': 0.0010327269556000829}
+2025-04-26 15:47:52.629 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'fearful': 0.96696, 'angry': 0.01243, 'sad': 0.00629, 'neutral': 0.00547, 'surprised': 0.00429, 'disgusted': 0.00353, 'happy': 0.00103}
+2025-04-26 15:47:52.660 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'surprise': 0.910160481929779, 'anger': 0.02707172930240631, 'disgust': 0.026323478668928146, 'neutral': 0.023764895275235176, 'joy': 0.005984952673316002, 'sadness': 0.004215078428387642, 'fear': 0.002479390474036336}
+2025-04-26 15:47:52.660 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'surprised': 0.91017, 'angry': 0.02707, 'disgusted': 0.02632, 'neutral': 0.02376, 'happy': 0.00598, 'sad': 0.00422, 'fearful': 0.00248}
+2025-04-26 15:47:52.660 | INFO     | app.emotion_pipeline:analyze_emotions:281 - Emotion analysis successful: Primary=surprised (0.910)
+2025-04-26 15:47:52.661 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.0970 seconds.
+2025-04-26 15:47:52.661 | INFO     | app.utils:wrapper:107 - Starting 'LLM Emotion + Response'...
+2025-04-26 15:47:55.354 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 15:47:55.355 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 15:47:55.659 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'surprise': 0.7932277321815491, 'fear': 0.17112599313259125, 'anger': 0.018489474430680275, 'neutral': 0.005815328098833561, 'joy': 0.00513124093413353, 'sadness': 0.003914494067430496, 'disgust': 0.002295703859999776}
+2025-04-26 15:47:55.659 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'surprised': 0.79322, 'fearful': 0.17113, 'angry': 0.01849, 'neutral': 0.00582, 'happy': 0.00513, 'sad': 0.00391, 'disgusted': 0.0023}
+2025-04-26 15:47:55.660 | INFO     | app.emotion_pipeline:analyze_emotions:281 - Emotion analysis successful: Primary=surprised (0.793)
+2025-04-26 15:47:55.660 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.3058 seconds.
+2025-04-26 15:47:55.660 | INFO     | app.llm_service:validate_response:57 - Response validated: matches expected emotion surprised
+2025-04-26 15:47:55.661 | INFO     | app.utils:wrapper:117 - 'LLM Emotion + Response' completed successfully in 2.9996 seconds.
+2025-04-26 15:47:55.661 | INFO     | app.main:chat_endpoint:125 - [ReqID: req_253a2296] Response cached.
+2025-04-26 15:47:55.661 | INFO     | app.main:chat_endpoint:134 - [ReqID: req_253a2296] Processed in 3.1016s.
+2025-04-26 15:48:00.454 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_64c78754] Chat request: 'okay?...'
+2025-04-26 15:48:00.455 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 15:48:00.455 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 15:48:00.488 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'surprise': 0.948375403881073, 'neutral': 0.01787519082427025, 'joy': 0.014778180047869682, 'anger': 0.007166810799390078, 'sadness': 0.0050122495740652084, 'disgust': 0.0046532792039215565, 'fear': 0.0021389371249824762}
+2025-04-26 15:48:00.488 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'surprised': 0.94837, 'neutral': 0.01788, 'happy': 0.01478, 'angry': 0.00717, 'sad': 0.00501, 'disgusted': 0.00465, 'fearful': 0.00214}
+2025-04-26 15:48:00.518 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'surprise': 0.948375403881073, 'neutral': 0.01787519082427025, 'joy': 0.014778180047869682, 'anger': 0.007166810799390078, 'sadness': 0.0050122495740652084, 'disgust': 0.0046532792039215565, 'fear': 0.0021389371249824762}
+2025-04-26 15:48:00.518 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'surprised': 0.94837, 'neutral': 0.01788, 'happy': 0.01478, 'angry': 0.00717, 'sad': 0.00501, 'disgusted': 0.00465, 'fearful': 0.00214}
+2025-04-26 15:48:00.519 | INFO     | app.emotion_pipeline:analyze_emotions:281 - Emotion analysis successful: Primary=surprised (0.948)
+2025-04-26 15:48:00.519 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.0641 seconds.
+2025-04-26 15:48:00.519 | INFO     | app.utils:wrapper:107 - Starting 'LLM Emotion + Response'...
+2025-04-26 15:48:03.181 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 15:48:03.181 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 15:48:03.271 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'fear': 0.7861143350601196, 'surprise': 0.16248191893100739, 'neutral': 0.020881274715065956, 'anger': 0.01897425763309002, 'sadness': 0.004968984983861446, 'disgust': 0.0037794187664985657, 'joy': 0.002799756359308958}
+2025-04-26 15:48:03.271 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'fearful': 0.78612, 'surprised': 0.16248, 'neutral': 0.02088, 'angry': 0.01897, 'sad': 0.00497, 'disgusted': 0.00378, 'happy': 0.0028}
+2025-04-26 15:48:03.271 | INFO     | app.emotion_pipeline:analyze_emotions:281 - Emotion analysis successful: Primary=fearful (0.786)
+2025-04-26 15:48:03.272 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.0910 seconds.
+2025-04-26 15:48:03.272 | WARNING  | app.llm_service:validate_response:59 - Response emotion mismatch: expected surprised, got fearful
+2025-04-26 15:48:03.272 | WARNING  | app.llm_service:refine_and_respond:107 - Response validation failed on attempt 1. Retrying...
+2025-04-26 15:48:04.540 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 15:48:04.540 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 15:48:04.629 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'fear': 0.8841625452041626, 'anger': 0.0846264660358429, 'surprise': 0.022113561630249023, 'neutral': 0.0030538272112607956, 'disgust': 0.0025351205840706825, 'joy': 0.00187007337808609, 'sadness': 0.0016383829060941935}
+2025-04-26 15:48:04.630 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'fearful': 0.88416, 'angry': 0.08463, 'surprised': 0.02211, 'neutral': 0.00305, 'disgusted': 0.00254, 'happy': 0.00187, 'sad': 0.00164}
+2025-04-26 15:48:04.630 | INFO     | app.emotion_pipeline:analyze_emotions:281 - Emotion analysis successful: Primary=fearful (0.884)
+2025-04-26 15:48:04.630 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.0908 seconds.
+2025-04-26 15:48:04.631 | WARNING  | app.llm_service:validate_response:59 - Response emotion mismatch: expected surprised, got fearful
+2025-04-26 15:48:04.631 | WARNING  | app.llm_service:refine_and_respond:107 - Response validation failed on attempt 2. Retrying...
+2025-04-26 15:48:04.631 | WARNING  | app.llm_service:refine_and_respond:116 - Max validation attempts reached. Using fallback.
+2025-04-26 15:48:04.631 | INFO     | app.utils:wrapper:117 - 'LLM Emotion + Response' completed successfully in 4.1118 seconds.
+2025-04-26 15:48:04.631 | INFO     | app.main:chat_endpoint:125 - [ReqID: req_64c78754] Response cached.
+2025-04-26 15:48:04.632 | INFO     | app.main:chat_endpoint:134 - [ReqID: req_64c78754] Processed in 4.1777s.
+2025-04-26 15:48:42.023 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_25362a6a] Chat request: 'yea u can fucking help me you  mechenical rusty pi...'
+2025-04-26 15:48:42.028 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 15:48:42.029 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 15:48:42.700 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'anger': 0.6602309346199036, 'disgust': 0.09283842146396637, 'sadness': 0.08349073678255081, 'surprise': 0.05982363224029541, 'fear': 0.04442637786269188, 'neutral': 0.038233138620853424, 'joy': 0.020956795662641525}
+2025-04-26 15:48:42.700 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'angry': 0.66023, 'disgusted': 0.09284, 'sad': 0.08349, 'surprised': 0.05982, 'fearful': 0.04443, 'neutral': 0.03823, 'happy': 0.02096}
+2025-04-26 15:48:42.701 | INFO     | app.emotion_pipeline:analyze_emotions:281 - Emotion analysis successful: Primary=angry (0.660)
+2025-04-26 15:48:42.702 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.6735 seconds.
+2025-04-26 15:48:42.702 | INFO     | app.utils:wrapper:107 - Starting 'LLM Emotion + Response'...
+2025-04-26 15:48:45.454 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 15:48:45.454 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 15:48:45.565 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'fear': 0.8811742663383484, 'anger': 0.10907392203807831, 'surprise': 0.002545770024880767, 'disgust': 0.002247241558507085, 'sadness': 0.0017913223709911108, 'neutral': 0.0017887846333906054, 'joy': 0.001378727494738996}
+2025-04-26 15:48:45.566 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'fearful': 0.88117, 'angry': 0.10907, 'surprised': 0.00255, 'disgusted': 0.00225, 'sad': 0.00179, 'neutral': 0.00179, 'happy': 0.00138}
+2025-04-26 15:48:45.566 | INFO     | app.emotion_pipeline:analyze_emotions:281 - Emotion analysis successful: Primary=fearful (0.881)
+2025-04-26 15:48:45.567 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.1131 seconds.
+2025-04-26 15:48:45.567 | WARNING  | app.llm_service:validate_response:59 - Response emotion mismatch: expected angry, got fearful
+2025-04-26 15:48:45.567 | WARNING  | app.llm_service:refine_and_respond:107 - Response validation failed on attempt 1. Retrying...
+2025-04-26 15:48:46.847 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 15:48:46.848 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 15:48:46.973 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'fear': 0.9630411863327026, 'anger': 0.02960049733519554, 'surprise': 0.00267998524941504, 'sadness': 0.0017806835239753127, 'joy': 0.001160000334493816, 'neutral': 0.0011282474733889103, 'disgust': 0.000609325710684061}
+2025-04-26 15:48:46.973 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'fearful': 0.96304, 'angry': 0.0296, 'surprised': 0.00268, 'sad': 0.00178, 'happy': 0.00116, 'neutral': 0.00113, 'disgusted': 0.00061}
+2025-04-26 15:48:47.005 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'fear': 0.9412813186645508, 'anger': 0.04342664033174515, 'neutral': 0.004944650921970606, 'surprise': 0.0035870943684130907, 'sadness': 0.0031115724705159664, 'disgust': 0.002318974817171693, 'joy': 0.001329795690253377}
+2025-04-26 15:48:47.006 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'fearful': 0.94128, 'angry': 0.04343, 'neutral': 0.00494, 'surprised': 0.00359, 'sad': 0.00311, 'disgusted': 0.00232, 'happy': 0.00133}
+2025-04-26 15:48:47.006 | INFO     | app.emotion_pipeline:analyze_emotions:281 - Emotion analysis successful: Primary=fearful (0.941)
+2025-04-26 15:48:47.007 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.1596 seconds.
+2025-04-26 15:48:47.007 | WARNING  | app.llm_service:validate_response:59 - Response emotion mismatch: expected angry, got fearful
+2025-04-26 15:48:47.007 | WARNING  | app.llm_service:refine_and_respond:107 - Response validation failed on attempt 2. Retrying...
+2025-04-26 15:48:47.008 | WARNING  | app.llm_service:refine_and_respond:116 - Max validation attempts reached. Using fallback.
+2025-04-26 15:48:47.008 | INFO     | app.utils:wrapper:117 - 'LLM Emotion + Response' completed successfully in 4.3062 seconds.
+2025-04-26 15:48:47.008 | INFO     | app.main:chat_endpoint:125 - [ReqID: req_25362a6a] Response cached.
+2025-04-26 15:48:47.009 | INFO     | app.main:chat_endpoint:134 - [ReqID: req_25362a6a] Processed in 4.9859s.
+2025-04-26 15:48:53.371 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_be8118d2] Chat request: 'yes can u help me...'
+2025-04-26 15:48:53.373 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 15:48:53.373 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 15:48:53.524 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'sadness': 0.6183849573135376, 'neutral': 0.26968640089035034, 'fear': 0.06527791172266006, 'surprise': 0.01757415384054184, 'joy': 0.016253041103482246, 'disgust': 0.006762616336345673, 'anger': 0.00606093555688858}
+2025-04-26 15:48:53.525 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'sad': 0.61838, 'neutral': 0.26969, 'fearful': 0.06528, 'surprised': 0.01757, 'happy': 0.01625, 'disgusted': 0.00676, 'angry': 0.00606}
+2025-04-26 15:48:53.525 | INFO     | app.emotion_pipeline:analyze_emotions:281 - Emotion analysis successful: Primary=sad (0.618)
+2025-04-26 15:48:53.526 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.1535 seconds.
+2025-04-26 15:48:53.527 | INFO     | app.utils:wrapper:107 - Starting 'LLM Emotion + Response'...
+2025-04-26 15:48:56.079 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 15:48:56.082 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 15:48:56.516 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'fear': 0.9791707992553711, 'sadness': 0.013113546185195446, 'joy': 0.003062716918066144, 'anger': 0.0028561633080244064, 'surprise': 0.0008253924897871912, 'neutral': 0.0006738235242664814, 'disgust': 0.00029761562473140657}
+2025-04-26 15:48:56.528 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'fearful': 0.97917, 'sad': 0.01311, 'happy': 0.00306, 'angry': 0.00286, 'surprised': 0.00083, 'neutral': 0.00067, 'disgusted': 0.0003}
+2025-04-26 15:48:56.795 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'fear': 0.9257338643074036, 'neutral': 0.04322563111782074, 'sadness': 0.01223562192171812, 'disgust': 0.009478732012212276, 'anger': 0.004227249417454004, 'surprise': 0.003392669605091214, 'joy': 0.0017062457045540214}
+2025-04-26 15:48:56.795 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'fearful': 0.92572, 'neutral': 0.04323, 'sad': 0.01224, 'disgusted': 0.00948, 'angry': 0.00423, 'surprised': 0.00339, 'happy': 0.00171}
+2025-04-26 15:48:56.796 | INFO     | app.emotion_pipeline:analyze_emotions:281 - Emotion analysis successful: Primary=fearful (0.926)
+2025-04-26 15:48:56.797 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.7184 seconds.
+2025-04-26 15:48:56.798 | WARNING  | app.llm_service:validate_response:59 - Response emotion mismatch: expected sad, got fearful
+2025-04-26 15:48:56.798 | WARNING  | app.llm_service:refine_and_respond:107 - Response validation failed on attempt 1. Retrying...
+2025-04-26 15:48:58.047 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 15:48:58.047 | INFO     | app.emotion_pipeline:load_models:21 - Models already loaded.
+2025-04-26 15:48:58.168 | INFO     | app.emotion_pipeline:map_emotions:135 - Raw distribution: {'fear': 0.8822131156921387, 'surprise': 0.09285572916269302, 'anger': 0.017915721982717514, 'neutral': 0.0021605936344712973, 'sadness': 0.0021567954681813717, 'joy': 0.0016916856402531266, 'disgust': 0.001006314647383988}
+2025-04-26 15:48:58.169 | INFO     | app.emotion_pipeline:map_emotions:136 - Mapped distribution: {'fearful': 0.8822, 'surprised': 0.09286, 'angry': 0.01792, 'neutral': 0.00216, 'sad': 0.00216, 'happy': 0.00169, 'disgusted': 0.00101}
+2025-04-26 15:48:58.169 | INFO     | app.emotion_pipeline:analyze_emotions:281 - Emotion analysis successful: Primary=fearful (0.882)
+2025-04-26 15:48:58.170 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.1230 seconds.
+2025-04-26 15:48:58.170 | WARNING  | app.llm_service:validate_response:59 - Response emotion mismatch: expected sad, got fearful
+2025-04-26 15:48:58.170 | WARNING  | app.llm_service:refine_and_respond:107 - Response validation failed on attempt 2. Retrying...
+2025-04-26 15:48:58.171 | WARNING  | app.llm_service:refine_and_respond:116 - Max validation attempts reached. Using fallback.
+2025-04-26 15:48:58.171 | INFO     | app.utils:wrapper:117 - 'LLM Emotion + Response' completed successfully in 4.6443 seconds.
+2025-04-26 15:48:58.172 | INFO     | app.main:chat_endpoint:125 - [ReqID: req_be8118d2] Response cached.
+2025-04-26 15:48:58.172 | INFO     | app.main:chat_endpoint:134 - [ReqID: req_be8118d2] Processed in 4.8015s.
+2025-04-26 15:52:11.790 | INFO     | app.main:lifespan:27 - Shutting down...
+2025-04-26 15:52:11.794 | INFO     | app.cache:close_redis_pool:53 - Redis connection pool closed.
+2025-04-26 15:52:11.794 | INFO     | app.main:lifespan:29 - Shutdown complete.

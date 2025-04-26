@@ -1,0 +1,34 @@
+2025-04-26 13:21:39.515 | INFO     | app.main:lifespan:14 - Starting application...
+2025-04-26 13:21:39.520 | INFO     | app.logging_setup:start_metrics_server:76 - Prometheus metrics server started on port 8001
+2025-04-26 13:21:39.522 | INFO     | app.cache:init_redis_pool:27 - Successfully connected to Redis at redis://localhost:6379/0
+2025-04-26 13:21:44.024 | INFO     | app.emotion_pipeline:load_models:48 - Loaded emotion model labels: ['anger', 'disgust', 'fear', 'joy', 'neutral', 'sadness', 'surprise']
+2025-04-26 13:21:44.071 | INFO     | app.llm_service:configure_genai:16 - Google GenAI client configured.
+2025-04-26 13:21:44.072 | INFO     | app.main:lifespan:22 - Redis cache cleared on startup.
+2025-04-26 13:21:44.072 | INFO     | app.main:lifespan:25 - Startup complete.
+2025-04-26 13:21:44.084 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_1f7c96d6] Chat request: 'i mean how are days going so far?...'
+2025-04-26 13:21:44.098 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 13:21:44.256 | INFO     | app.emotion_pipeline:map_emotions:69 - Raw distribution: {'surprise': 0.7934520840644836, 'neutral': 0.17395716905593872, 'sadness': 0.013006564229726791, 'anger': 0.0076194386929273605, 'joy': 0.005011297762393951, 'disgust': 0.004304028581827879, 'fear': 0.0026494271587580442}
+2025-04-26 13:21:44.256 | INFO     | app.emotion_pipeline:map_emotions:70 - Mapped distribution: {'surprised': 0.79345, 'neutral': 0.17396, 'sad': 0.01301, 'angry': 0.00762, 'happy': 0.00501, 'disgusted': 0.0043, 'fearful': 0.00265}
+2025-04-26 13:21:44.257 | ERROR    | app.emotion_pipeline:analyze_emotions:126 - Attempt 1/2 failed to create EmotionAnalysisResult: Incorrect label names
+2025-04-26 13:21:44.257 | INFO     | app.emotion_pipeline:map_emotions:69 - Raw distribution: {'surprise': 0.7934520840644836, 'neutral': 0.17395716905593872, 'sadness': 0.013006564229726791, 'anger': 0.0076194386929273605, 'joy': 0.005011297762393951, 'disgust': 0.004304028581827879, 'fear': 0.0026494271587580442}
+2025-04-26 13:21:44.257 | INFO     | app.emotion_pipeline:map_emotions:70 - Mapped distribution: {'surprised': 0.79345, 'neutral': 0.17396, 'sad': 0.01301, 'angry': 0.00762, 'happy': 0.00501, 'disgusted': 0.0043, 'fearful': 0.00265}
+2025-04-26 13:21:44.257 | ERROR    | app.emotion_pipeline:analyze_emotions:126 - Attempt 2/2 failed to create EmotionAnalysisResult: Incorrect label names
+2025-04-26 13:21:44.257 | WARNING  | app.emotion_pipeline:analyze_emotions:128 - Max attempts reached. Falling back to neutral.
+2025-04-26 13:21:44.258 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.1599 seconds.
+2025-04-26 13:21:44.258 | WARNING  | app.main:chat_endpoint:97 - [ReqID: req_1f7c96d6] Low-confidence emotion detected.
+2025-04-26 13:21:44.258 | INFO     | app.utils:wrapper:107 - Starting 'LLM Emotion + Response'...
+2025-04-26 13:21:46.702 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 13:21:46.801 | INFO     | app.emotion_pipeline:map_emotions:69 - Raw distribution: {'neutral': 0.48512792587280273, 'surprise': 0.3364858031272888, 'joy': 0.16037407517433167, 'sadness': 0.009397703222930431, 'anger': 0.005104776471853256, 'fear': 0.002221096307039261, 'disgust': 0.0012886191252619028}
+2025-04-26 13:21:46.802 | INFO     | app.emotion_pipeline:map_emotions:70 - Mapped distribution: {'neutral': 0.48513, 'surprised': 0.33649, 'happy': 0.16037, 'sad': 0.0094, 'angry': 0.0051, 'fearful': 0.00222, 'disgusted': 0.00129}
+2025-04-26 13:21:46.802 | ERROR    | app.emotion_pipeline:analyze_emotions:126 - Attempt 1/2 failed to create EmotionAnalysisResult: Incorrect label names
+2025-04-26 13:21:46.802 | INFO     | app.emotion_pipeline:map_emotions:69 - Raw distribution: {'neutral': 0.48512792587280273, 'surprise': 0.3364858031272888, 'joy': 0.16037407517433167, 'sadness': 0.009397703222930431, 'anger': 0.005104776471853256, 'fear': 0.002221096307039261, 'disgust': 0.0012886191252619028}
+2025-04-26 13:21:46.802 | INFO     | app.emotion_pipeline:map_emotions:70 - Mapped distribution: {'neutral': 0.48513, 'surprised': 0.33649, 'happy': 0.16037, 'sad': 0.0094, 'angry': 0.0051, 'fearful': 0.00222, 'disgusted': 0.00129}
+2025-04-26 13:21:46.803 | ERROR    | app.emotion_pipeline:analyze_emotions:126 - Attempt 2/2 failed to create EmotionAnalysisResult: Incorrect label names
+2025-04-26 13:21:46.803 | WARNING  | app.emotion_pipeline:analyze_emotions:128 - Max attempts reached. Falling back to neutral.
+2025-04-26 13:21:46.803 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.1008 seconds.
+2025-04-26 13:21:46.803 | INFO     | app.llm_service:validate_response:44 - Response validated: matches expected emotion neutral
+2025-04-26 13:21:46.803 | INFO     | app.utils:wrapper:117 - 'LLM Emotion + Response' completed successfully in 2.5453 seconds.
+2025-04-26 13:21:46.804 | INFO     | app.main:chat_endpoint:127 - [ReqID: req_1f7c96d6] Skipped caching due to low-confidence emotion (score: 0.5).
+2025-04-26 13:21:46.804 | INFO     | app.main:chat_endpoint:134 - [ReqID: req_1f7c96d6] Processed in 2.7203s.
+2025-04-26 13:22:47.480 | INFO     | app.main:lifespan:27 - Shutting down...
+2025-04-26 13:22:47.482 | ERROR    | app.cache:close_redis_pool:49 - Error closing Redis connection pool: 'Redis' object has no attribute 'wait_closed'

@@ -1,0 +1,19 @@
+2025-04-26 00:36:10.837 | INFO     | app.main:lifespan:15 - Starting application...
+2025-04-26 00:36:10.844 | INFO     | app.logging_setup:start_metrics_server:81 - Prometheus metrics server started on port 8001
+2025-04-26 00:36:10.848 | ERROR    | app.cache:init_redis_pool:24 - Failed to connect to Redis (via redis-py) at redis://redis:6379/0: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2025-04-26 00:36:15.399 | INFO     | app.emotion_pipeline:load_emotion_model:68 - Loaded models on device 0.
+2025-04-26 00:36:15.460 | INFO     | app.llm_service:configure_genai:19 - Google Generative AI client configured. SDK version: 1.12.1
+2025-04-26 00:36:15.461 | INFO     | app.main:lifespan:20 - Startup complete.
+2025-04-26 00:36:15.469 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_3e52420a] Chat request: 'I was standing on the cliff’s edge last night, the...'
+2025-04-26 00:36:15.470 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-26 00:36:15.470 | INFO     | app.utils:wrapper:76 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 00:36:19.767 | WARNING  | app.emotion_pipeline:analyze_emotions:129 - No <json> tags detected; using initial distribution.
+2025-04-26 00:36:19.769 | INFO     | app.utils:wrapper:86 - 'Advanced Emotion Analysis' completed successfully in 4.2989 seconds.
+2025-04-26 00:36:19.769 | INFO     | app.utils:wrapper:76 - Starting 'Emotionally Intelligent LLM Call'...
+2025-04-26 00:36:22.577 | INFO     | app.llm_service:generate_emotional_response:86 - Final emotional response preview: 'Oh, darling, standing on that cliff, feeling both the pull of the abys...'
+2025-04-26 00:36:22.578 | INFO     | app.utils:wrapper:86 - 'Emotionally Intelligent LLM Call' completed successfully in 2.8090 seconds.
+2025-04-26 00:36:22.579 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-26 00:36:22.580 | INFO     | app.main:chat_endpoint:135 - [ReqID: req_3e52420a] Response cached.
+2025-04-26 00:36:22.580 | INFO     | app.main:chat_endpoint:142 - [ReqID: req_3e52420a] Processed in 7.1110s.
+2025-04-26 00:39:40.624 | INFO     | app.main:lifespan:22 - Shutting down...
+2025-04-26 00:39:40.626 | INFO     | app.main:lifespan:24 - Shutdown complete.

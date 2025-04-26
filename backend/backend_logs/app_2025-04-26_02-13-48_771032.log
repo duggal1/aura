@@ -1,0 +1,8 @@
+2025-04-26 02:13:57.330 | INFO     | app.main:lifespan:15 - Starting application...
+2025-04-26 02:13:57.335 | INFO     | app.logging_setup:start_metrics_server:81 - Prometheus metrics server started on port 8001
+2025-04-26 02:13:57.340 | INFO     | app.cache:init_redis_pool:27 - Successfully connected to Redis at redis://localhost:6379/0
+2025-04-26 02:14:00.770 | INFO     | app.llm_service:configure_genai:25 - Google GenAI client configured.
+2025-04-26 02:14:00.771 | INFO     | app.main:lifespan:24 - Startup complete.
+2025-04-26 02:14:04.312 | INFO     | app.main:lifespan:26 - Shutting down...
+2025-04-26 02:14:04.314 | ERROR    | app.cache:close_redis_pool:49 - Error closing Redis connection pool: 'Redis' object has no attribute 'wait_closed'
+2025-04-26 02:14:04.315 | INFO     | app.main:lifespan:28 - Shutdown complete.

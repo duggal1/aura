@@ -1,0 +1,32 @@
+2025-04-26 13:28:21.579 | INFO     | app.main:lifespan:14 - Starting application...
+2025-04-26 13:28:21.584 | INFO     | app.logging_setup:start_metrics_server:76 - Prometheus metrics server started on port 8001
+2025-04-26 13:28:21.586 | INFO     | app.cache:init_redis_pool:27 - Successfully connected to Redis at redis://localhost:6379/0
+2025-04-26 13:28:22.898 | INFO     | app.emotion_pipeline:load_models:39 - Loaded emotion model: j-hartmann/emotion-english-distilroberta-base
+2025-04-26 13:28:23.551 | INFO     | app.emotion_pipeline:load_models:45 - Loaded sentiment model
+2025-04-26 13:28:24.656 | INFO     | app.emotion_pipeline:load_models:53 - Loaded sarcasm model: jkhan447/sarcasm-detection-RoBerta-base-POS
+2025-04-26 13:28:24.657 | INFO     | app.emotion_pipeline:load_models:58 - Loaded emotion model labels: ['anger', 'disgust', 'fear', 'joy', 'neutral', 'sadness', 'surprise']
+2025-04-26 13:28:24.694 | INFO     | app.llm_service:configure_genai:16 - Google GenAI client configured.
+2025-04-26 13:28:24.695 | INFO     | app.main:lifespan:22 - Redis cache cleared on startup.
+2025-04-26 13:28:24.695 | INFO     | app.main:lifespan:25 - Startup complete.
+2025-04-26 13:28:26.053 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_c80d7704] Chat request: 'im feeling lonely as fuck...'
+2025-04-26 13:28:26.055 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 13:28:26.228 | INFO     | app.emotion_pipeline:map_emotions:78 - Raw distribution: {'sadness': 0.9935387969017029, 'neutral': 0.001780133112333715, 'fear': 0.0012652918230742216, 'surprise': 0.0010263320291414857, 'anger': 0.0009730298188515007, 'disgust': 0.0007705657626502216, 'joy': 0.0006459194119088352}
+2025-04-26 13:28:26.228 | INFO     | app.emotion_pipeline:map_emotions:79 - Mapped distribution: {'sad': 0.99354, 'neutral': 0.00178, 'fearful': 0.00127, 'surprised': 0.00103, 'angry': 0.00097, 'disgusted': 0.00077, 'happy': 0.00065}
+2025-04-26 13:28:26.228 | ERROR    | app.emotion_pipeline:analyze_emotions:140 - Failed to create EmotionAnalysisResult: Incorrect label names
+2025-04-26 13:28:26.229 | WARNING  | app.emotion_pipeline:analyze_emotions:141 - Returning neutral fallback due to processing error.
+2025-04-26 13:28:26.229 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.1740 seconds.
+2025-04-26 13:28:26.229 | WARNING  | app.main:chat_endpoint:97 - [ReqID: req_c80d7704] Low-confidence emotion detected.
+2025-04-26 13:28:26.229 | INFO     | app.utils:wrapper:107 - Starting 'LLM Emotion + Response'...
+2025-04-26 13:28:29.049 | INFO     | app.utils:wrapper:107 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 13:28:29.148 | INFO     | app.emotion_pipeline:map_emotions:78 - Raw distribution: {'sadness': 0.9917928576469421, 'neutral': 0.002643768209964037, 'surprise': 0.0014524967409670353, 'fear': 0.0011735057923942804, 'joy': 0.0010362144093960524, 'anger': 0.0009784564608708024, 'disgust': 0.0009226803667843342}
+2025-04-26 13:28:29.148 | INFO     | app.emotion_pipeline:map_emotions:79 - Mapped distribution: {'sad': 0.99179, 'neutral': 0.00264, 'surprised': 0.00145, 'fearful': 0.00117, 'happy': 0.00104, 'angry': 0.00098, 'disgusted': 0.00092}
+2025-04-26 13:28:29.148 | ERROR    | app.emotion_pipeline:analyze_emotions:140 - Failed to create EmotionAnalysisResult: Incorrect label names
+2025-04-26 13:28:29.149 | WARNING  | app.emotion_pipeline:analyze_emotions:141 - Returning neutral fallback due to processing error.
+2025-04-26 13:28:29.149 | INFO     | app.utils:wrapper:117 - 'Advanced Emotion Analysis' completed successfully in 0.1000 seconds.
+2025-04-26 13:28:29.149 | INFO     | app.llm_service:validate_response:44 - Response validated: matches expected emotion neutral
+2025-04-26 13:28:29.149 | INFO     | app.utils:wrapper:117 - 'LLM Emotion + Response' completed successfully in 2.9200 seconds.
+2025-04-26 13:28:29.149 | INFO     | app.main:chat_endpoint:127 - [ReqID: req_c80d7704] Skipped caching due to low-confidence emotion (score: 0.5).
+2025-04-26 13:28:29.150 | INFO     | app.main:chat_endpoint:134 - [ReqID: req_c80d7704] Processed in 3.0962s.
+2025-04-26 13:28:40.171 | INFO     | app.main:lifespan:27 - Shutting down...
+2025-04-26 13:28:40.175 | ERROR    | app.cache:close_redis_pool:49 - Error closing Redis connection pool: 'Redis' object has no attribute 'wait_closed'
+2025-04-26 13:28:40.175 | INFO     | app.main:lifespan:29 - Shutdown complete.

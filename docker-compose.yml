@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: emotion-llm-backend-prodlike # Changed name slightly
+    restart: unless-stopped
+    ports:
+      - "8000:8000" # FastAPI app
+      - "8001:8001" # Prometheus metrics
+    env_file:
+      - ./backend/.env # Load environment variables
+    volumes:
+      # --- Development Volume Mount (Optional - uncomment for hot-reloading) ---
+      # Mount your local 'app' folder into the container.
+      # Requires '--reload' flag in uvicorn CMD in this file (NOT Dockerfile CMD).
+      #- ./backend/app:/home/appuser/app/app
+
+      # --- Log Volume ---
+      # Mount a volume for persistent logs outside the container
+      - backend_logs:/home/appuser/app/backend_logs
+    depends_on:
+      - redis
+    environment:
+      # Ensure Redis URL points to the service name (internal Docker network)
+      - REDIS_URL=redis://redis:6379/0
+      # PYTHONUNBUFFERED is set in Dockerfile
+      # Set LOG_FILE_PATH to the location inside the container
+      - LOG_FILE_PATH=/home/appuser/app/backend_logs/app_{time}.log
+    # --- Development Command (with reload) ---
+    # Use this command if you uncommented the app volume mount above
+    # command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload", "--log-level", "info"]
+
+    # --- Production-like Command (from Dockerfile CMD) ---
+    # Let the Dockerfile CMD run by default (no command override here)
+    # If using Gunicorn in Dockerfile CMD, ensure this is commented out.
+
+
+  redis:
+    image: redis:7.2-alpine # Use specific version tag
+    container_name: emotion-llm-redis
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data # Persist Redis data
+    command: redis-server --save 60 1 --loglevel warning # Persist slightly more often, reduce log noise
+
+volumes:
+  redis_data: # Defines the named volume for Redis persistence
+    driver: local
+  backend_logs: # Defines the named volume for backend logs
+    driver: local

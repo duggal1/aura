@@ -1,0 +1,17 @@
+2025-04-25 23:36:39.101 | INFO     | app.main:lifespan:15 - Starting application...
+2025-04-25 23:36:39.113 | INFO     | app.logging_setup:start_metrics_server:81 - Prometheus metrics server started on port 8001
+2025-04-25 23:36:39.117 | ERROR    | app.cache:init_redis_pool:24 - Failed to connect to Redis (via redis-py) at redis://redis:6379/0: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2025-04-25 23:36:41.497 | INFO     | app.emotion_pipeline:load_emotion_model:39 - Loaded emotion model on device 0.
+2025-04-25 23:36:41.743 | INFO     | app.llm_service:configure_genai:20 - Google Generative AI client configured. SDK version: 1.12.1
+2025-04-25 23:36:41.744 | INFO     | app.main:lifespan:20 - Startup complete.
+2025-04-25 23:36:58.452 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_a1fc9980] Chat request: 'hey how you doin sweetheart?...'
+2025-04-25 23:36:58.453 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 23:36:58.453 | INFO     | app.utils:wrapper:76 - Starting 'Advanced Emotion Analysis'...
+2025-04-25 23:37:04.240 | INFO     | app.utils:wrapper:86 - 'Advanced Emotion Analysis' completed successfully in 5.7869 seconds.
+2025-04-25 23:37:04.242 | INFO     | app.utils:wrapper:76 - Starting 'Emotionally Intelligent LLM Call'...
+2025-04-25 23:37:15.908 | INFO     | app.llm_service:generate_emotional_response:110 - Final emotional response preview: 'This is already a pretty emotionally expressive response! However, we ...'
+2025-04-25 23:37:15.909 | INFO     | app.utils:wrapper:86 - 'Emotionally Intelligent LLM Call' completed successfully in 11.6685 seconds.
+2025-04-25 23:37:15.910 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 23:37:15.910 | INFO     | app.main:chat_endpoint:135 - [ReqID: req_a1fc9980] Response cached.
+2025-04-25 23:37:15.911 | INFO     | app.main:chat_endpoint:142 - [ReqID: req_a1fc9980] Processed in 17.4602s.
+2025-04-25 23:41:50.189 | INFO     | app.main:lifespan:22 - Shutting down...

@@ -1,0 +1,10 @@
+2025-04-25 20:31:33.818 | INFO     | app.main:lifespan:19 - Application startup sequence initiated...
+2025-04-25 20:31:33.822 | INFO     | app.logging_setup:start_metrics_server:81 - Prometheus metrics server started on port 8001
+2025-04-25 20:31:33.840 | ERROR    | app.cache:init_redis_pool:24 - Failed to connect to Redis (via redis-py) at redis://redis:6379/0: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2025-04-25 20:31:33.840 | INFO     | app.emotion_pipeline:load_emotion_model:22 - Loading emotion model: Samhita/distilbert-emotion-analyzer...
+2025-04-25 20:31:33.878 | INFO     | app.emotion_pipeline:load_emotion_model:34 - Using device: mps for emotion model.
+2025-04-25 20:31:34.699 | CRITICAL | app.emotion_pipeline:load_emotion_model:53 - FATAL: Failed to load emotion model or LLM: Samhita/distilbert-emotion-analyzer is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-04-25 20:31:34.759 | INFO     | app.llm_service:configure_genai:16 - Google Generative AI client configured successfully.
+2025-04-25 20:31:34.759 | INFO     | app.main:lifespan:28 - Application startup sequence completed.
+2025-04-25 20:31:59.639 | INFO     | app.main:lifespan:31 - Application shutdown sequence initiated...

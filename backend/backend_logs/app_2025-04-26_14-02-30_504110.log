@@ -1,0 +1,12 @@
+2025-04-26 14:02:38.713 | INFO     | app.main:lifespan:14 - Starting application...
+2025-04-26 14:02:38.723 | INFO     | app.logging_setup:start_metrics_server:76 - Prometheus metrics server started on port 8001
+2025-04-26 14:02:38.727 | INFO     | app.cache:init_redis_pool:27 - Successfully connected to Redis at redis://localhost:6379/0
+2025-04-26 14:02:38.727 | INFO     | app.emotion_pipeline:load_models:87 - Device set to use cpu
+2025-04-26 14:02:40.755 | INFO     | app.emotion_pipeline:load_models:101 - Loaded emotion model: j-hartmann/emotion-english-distilroberta-base
+2025-04-26 14:02:40.756 | INFO     | app.emotion_pipeline:load_models:104 - Loaded emotion model labels from config: ['anger', 'disgust', 'fear', 'joy', 'neutral', 'sadness', 'surprise']
+2025-04-26 14:02:41.459 | INFO     | app.emotion_pipeline:load_models:119 - Loaded sentiment model
+2025-04-26 14:02:42.875 | INFO     | app.emotion_pipeline:load_models:135 - Loaded sarcasm model: jkhan447/sarcasm-detection-RoBerta-base-POS
+2025-04-26 14:02:42.875 | INFO     | app.emotion_pipeline:load_models:137 - Loaded sarcasm model labels from config: ['LABEL_0', 'LABEL_1']
+2025-04-26 14:02:42.914 | INFO     | app.llm_service:configure_genai:16 - Google GenAI client configured.
+2025-04-26 14:02:42.918 | INFO     | app.main:lifespan:22 - Redis cache cleared on startup.
+2025-04-26 14:02:42.918 | INFO     | app.main:lifespan:25 - Startup complete.

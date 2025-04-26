@@ -1,0 +1,17 @@
+2025-04-26 00:56:14.756 | INFO     | app.main:lifespan:15 - Starting application...
+2025-04-26 00:56:14.761 | INFO     | app.logging_setup:start_metrics_server:81 - Prometheus metrics server started on port 8001
+2025-04-26 00:56:14.764 | ERROR    | app.cache:init_redis_pool:24 - Failed to connect to Redis (via redis-py) at redis://redis:6379/0: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2025-04-26 00:56:19.148 | INFO     | app.emotion_pipeline:load_emotion_model:87 - Loaded models on device 0.
+2025-04-26 00:56:19.191 | INFO     | app.llm_service:configure_genai:19 - Google Generative AI client configured. SDK version: 1.12.1
+2025-04-26 00:56:19.192 | INFO     | app.main:lifespan:20 - Startup complete.
+2025-04-26 00:56:19.198 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_b7d48bf5] Chat request: 'I was standing on the cliff’s edge last night, the...'
+2025-04-26 00:56:19.199 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-26 00:56:19.199 | INFO     | app.utils:wrapper:76 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 00:56:24.468 | INFO     | app.utils:wrapper:86 - 'Advanced Emotion Analysis' completed successfully in 5.2695 seconds.
+2025-04-26 00:56:24.469 | INFO     | app.utils:wrapper:76 - Starting 'Emotionally Intelligent LLM Call'...
+2025-04-26 00:56:27.281 | INFO     | app.llm_service:generate_emotional_response:86 - Final emotional response preview: 'Oh, darling, I feel the wind whipping at my own face as I stand there ...'
+2025-04-26 00:56:27.282 | INFO     | app.utils:wrapper:86 - 'Emotionally Intelligent LLM Call' completed successfully in 2.8129 seconds.
+2025-04-26 00:56:27.282 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-26 00:56:27.283 | INFO     | app.main:chat_endpoint:135 - [ReqID: req_b7d48bf5] Response cached.
+2025-04-26 00:56:27.283 | INFO     | app.main:chat_endpoint:142 - [ReqID: req_b7d48bf5] Processed in 8.0846s.
+2025-04-26 00:58:46.517 | INFO     | app.main:lifespan:22 - Shutting down...

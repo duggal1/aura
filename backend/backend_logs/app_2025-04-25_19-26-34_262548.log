@@ -1,0 +1,178 @@
+2025-04-25 19:26:57.507 | INFO     | app.main:lifespan:19 - Application startup sequence initiated...
+2025-04-25 19:26:57.658 | INFO     | app.logging_setup:start_metrics_server:81 - Prometheus metrics server started on port 8001
+2025-04-25 19:26:57.700 | ERROR    | app.cache:init_redis_pool:24 - Failed to connect to Redis (via redis-py) at redis://redis:6379/0: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2025-04-25 19:26:57.701 | INFO     | app.emotion_pipeline:load_emotion_model:21 - Attempting to load emotion model: j-hartmann/emotion-english-distilroberta-base...
+2025-04-25 19:26:57.833 | INFO     | app.emotion_pipeline:load_emotion_model:33 - Using device: mps for emotion model.
+2025-04-25 19:28:01.221 | INFO     | app.emotion_pipeline:load_emotion_model:49 - Successfully loaded emotion model 'j-hartmann/emotion-english-distilroberta-base' on mps.
+2025-04-25 19:28:01.360 | INFO     | app.llm_service:configure_genai:16 - Google Generative AI client configured successfully.
+2025-04-25 19:28:01.360 | INFO     | app.main:lifespan:28 - Application startup sequence completed.
+2025-04-25 19:32:25.889 | INFO     | app.main:chat_endpoint:143 - [ReqID: req_d1dbead4] Received chat request: 'hiii...'
+2025-04-25 19:32:25.894 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:32:25.895 | INFO     | app.main:chat_endpoint:170 - [ReqID: req_d1dbead4] Cache miss or invalid data. Processing request...
+2025-04-25 19:32:25.895 | INFO     | app.utils:wrapper:76 - Starting 'Emotion Analysis'...
+2025-04-25 19:32:30.440 | INFO     | app.emotion_pipeline:analyze_emotions:108 - Emotion analysis for text 'hiii...': Primary=neutral (0.860), Intensity=8.6
+2025-04-25 19:32:30.442 | INFO     | app.utils:wrapper:86 - 'Emotion Analysis' completed successfully in 4.5466 seconds.
+2025-04-25 19:32:30.442 | INFO     | app.utils:wrapper:76 - Starting 'Gemini LLM Call'...
+2025-04-25 19:32:32.633 | INFO     | app.llm_service:generate_emotional_response:101 - Received response from Gemini (gemini-2.0-flash): 'Hi! How can I help you today?...'
+2025-04-25 19:32:32.634 | INFO     | app.utils:wrapper:86 - 'Gemini LLM Call' completed successfully in 2.1921 seconds.
+2025-04-25 19:32:32.634 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:32:32.634 | INFO     | app.main:chat_endpoint:232 - [ReqID: req_d1dbead4] Response cached successfully for key 'chat_resp_v1.1:cfeadd1353bcc2d50a484de47f12069ea0fce82ae748ff27b54559ddd028f443'.
+2025-04-25 19:32:32.635 | INFO     | app.main:chat_endpoint:243 - [ReqID: req_d1dbead4] Successfully processed chat request in 6.7466 seconds.
+2025-04-25 19:35:34.616 | INFO     | app.main:chat_endpoint:143 - [ReqID: req_755ebd88] Received chat request: 'I write to you now with hands that tremble between...'
+2025-04-25 19:35:34.620 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:35:34.622 | INFO     | app.main:chat_endpoint:170 - [ReqID: req_755ebd88] Cache miss or invalid data. Processing request...
+2025-04-25 19:35:34.623 | INFO     | app.utils:wrapper:76 - Starting 'Emotion Analysis'...
+2025-04-25 19:35:36.141 | INFO     | app.emotion_pipeline:analyze_emotions:108 - Emotion analysis for text 'I write to you now with hands that tremble between...': Primary=fear (0.981), Intensity=9.8
+2025-04-25 19:35:36.148 | INFO     | app.utils:wrapper:86 - 'Emotion Analysis' completed successfully in 1.5250 seconds.
+2025-04-25 19:35:36.148 | INFO     | app.utils:wrapper:76 - Starting 'Gemini LLM Call'...
+2025-04-25 19:35:42.649 | INFO     | app.llm_service:generate_emotional_response:101 - Received response from Gemini (gemini-2.0-flash): 'It sounds like you're caught in a whirlwind of conflicting emotions ri...'
+2025-04-25 19:35:42.650 | INFO     | app.utils:wrapper:86 - 'Gemini LLM Call' completed successfully in 6.5025 seconds.
+2025-04-25 19:35:42.651 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:35:42.652 | INFO     | app.main:chat_endpoint:232 - [ReqID: req_755ebd88] Response cached successfully for key 'chat_resp_v1.1:1e31c2f50141c2024023e49a7f3f340db037177e63a75e994827940f40c8acf4'.
+2025-04-25 19:35:42.652 | INFO     | app.main:chat_endpoint:243 - [ReqID: req_755ebd88] Successfully processed chat request in 8.0366 seconds.
+2025-04-25 19:42:05.011 | INFO     | app.main:chat_endpoint:143 - [ReqID: req_3d0c3fe6] Received chat request: 'hey im feeling lonely as fuck...'
+2025-04-25 19:42:05.021 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:42:05.022 | INFO     | app.main:chat_endpoint:170 - [ReqID: req_3d0c3fe6] Cache miss or invalid data. Processing request...
+2025-04-25 19:42:05.023 | INFO     | app.utils:wrapper:76 - Starting 'Emotion Analysis'...
+2025-04-25 19:42:06.362 | INFO     | app.emotion_pipeline:analyze_emotions:108 - Emotion analysis for text 'hey im feeling lonely as fuck...': Primary=sadness (0.993), Intensity=9.9
+2025-04-25 19:42:06.363 | INFO     | app.utils:wrapper:86 - 'Emotion Analysis' completed successfully in 1.3403 seconds.
+2025-04-25 19:42:06.363 | INFO     | app.utils:wrapper:76 - Starting 'Gemini LLM Call'...
+2025-04-25 19:42:08.750 | INFO     | app.llm_service:generate_emotional_response:101 - Received response from Gemini (gemini-2.0-flash): 'I'm truly sorry to hear you're feeling so incredibly lonely. That soun...'
+2025-04-25 19:42:08.752 | INFO     | app.utils:wrapper:86 - 'Gemini LLM Call' completed successfully in 2.3886 seconds.
+2025-04-25 19:42:08.752 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:42:08.753 | INFO     | app.main:chat_endpoint:232 - [ReqID: req_3d0c3fe6] Response cached successfully for key 'chat_resp_v1.1:74ddd1c330af6af526242bf14b93b8352b71caed1b21e626498cdaee9498b63e'.
+2025-04-25 19:42:08.753 | INFO     | app.main:chat_endpoint:243 - [ReqID: req_3d0c3fe6] Successfully processed chat request in 3.7429 seconds.
+2025-04-25 19:42:20.575 | INFO     | app.main:chat_endpoint:143 - [ReqID: req_37aa8a67] Received chat request: 'yes please help me...'
+2025-04-25 19:42:20.576 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:42:20.576 | INFO     | app.main:chat_endpoint:170 - [ReqID: req_37aa8a67] Cache miss or invalid data. Processing request...
+2025-04-25 19:42:20.577 | INFO     | app.utils:wrapper:76 - Starting 'Emotion Analysis'...
+2025-04-25 19:42:21.236 | INFO     | app.emotion_pipeline:analyze_emotions:108 - Emotion analysis for text 'yes please help me...': Primary=sadness (0.368), Intensity=3.7
+2025-04-25 19:42:21.237 | INFO     | app.utils:wrapper:86 - 'Emotion Analysis' completed successfully in 0.6601 seconds.
+2025-04-25 19:42:21.237 | INFO     | app.utils:wrapper:76 - Starting 'Gemini LLM Call'...
+2025-04-25 19:42:23.429 | INFO     | app.llm_service:generate_emotional_response:101 - Received response from Gemini (gemini-2.0-flash): 'I understand you're looking for help. I'm here to listen and offer sup...'
+2025-04-25 19:42:23.430 | INFO     | app.utils:wrapper:86 - 'Gemini LLM Call' completed successfully in 2.1933 seconds.
+2025-04-25 19:42:23.431 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:42:23.431 | INFO     | app.main:chat_endpoint:232 - [ReqID: req_37aa8a67] Response cached successfully for key 'chat_resp_v1.1:c816295babcf463c5262d3f121808e28f55eac128c10afbfa2a6a45baacc43d8'.
+2025-04-25 19:42:23.432 | INFO     | app.main:chat_endpoint:243 - [ReqID: req_37aa8a67] Successfully processed chat request in 2.8565 seconds.
+2025-04-25 19:42:36.603 | INFO     | app.main:chat_endpoint:143 - [ReqID: req_262cfbff] Received chat request: 'FUCK U...'
+2025-04-25 19:42:36.604 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:42:36.604 | INFO     | app.main:chat_endpoint:170 - [ReqID: req_262cfbff] Cache miss or invalid data. Processing request...
+2025-04-25 19:42:36.605 | INFO     | app.utils:wrapper:76 - Starting 'Emotion Analysis'...
+2025-04-25 19:42:37.287 | INFO     | app.emotion_pipeline:analyze_emotions:108 - Emotion analysis for text 'FUCK U...': Primary=anger (0.762), Intensity=7.6
+2025-04-25 19:42:37.288 | INFO     | app.utils:wrapper:86 - 'Emotion Analysis' completed successfully in 0.6828 seconds.
+2025-04-25 19:42:37.288 | INFO     | app.utils:wrapper:76 - Starting 'Gemini LLM Call'...
+2025-04-25 19:42:39.631 | INFO     | app.llm_service:generate_emotional_response:101 - Received response from Gemini (gemini-2.0-flash): 'I understand that you're feeling angry right now. I'm here to help if ...'
+2025-04-25 19:42:39.632 | INFO     | app.utils:wrapper:86 - 'Gemini LLM Call' completed successfully in 2.3441 seconds.
+2025-04-25 19:42:39.633 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:42:39.633 | INFO     | app.main:chat_endpoint:232 - [ReqID: req_262cfbff] Response cached successfully for key 'chat_resp_v1.1:6d0ce366e73e3bf19d5bdf8279be8e4c2cd82baf24dee2671da2477596e1e947'.
+2025-04-25 19:42:39.634 | INFO     | app.main:chat_endpoint:243 - [ReqID: req_262cfbff] Successfully processed chat request in 3.0309 seconds.
+2025-04-25 19:46:15.362 | INFO     | app.main:chat_endpoint:143 - [ReqID: req_ba501fe9] Received chat request: 'hey...'
+2025-04-25 19:46:15.365 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:46:15.366 | INFO     | app.main:chat_endpoint:170 - [ReqID: req_ba501fe9] Cache miss or invalid data. Processing request...
+2025-04-25 19:46:15.366 | INFO     | app.utils:wrapper:76 - Starting 'Emotion Analysis'...
+2025-04-25 19:46:16.512 | INFO     | app.emotion_pipeline:analyze_emotions:108 - Emotion analysis for text 'hey...': Primary=neutral (0.805), Intensity=8.1
+2025-04-25 19:46:16.514 | INFO     | app.utils:wrapper:86 - 'Emotion Analysis' completed successfully in 1.1485 seconds.
+2025-04-25 19:46:16.515 | INFO     | app.utils:wrapper:76 - Starting 'Gemini LLM Call'...
+2025-04-25 19:46:18.810 | INFO     | app.llm_service:generate_emotional_response:101 - Received response from Gemini (gemini-2.0-flash): 'Hey there! How can I help you today?...'
+2025-04-25 19:46:18.811 | INFO     | app.utils:wrapper:86 - 'Gemini LLM Call' completed successfully in 2.2968 seconds.
+2025-04-25 19:46:18.813 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:46:18.813 | INFO     | app.main:chat_endpoint:232 - [ReqID: req_ba501fe9] Response cached successfully for key 'chat_resp_v1.1:fa690b82061edfd2852629aeba8a8977b57e40fcb77d1a7a28b26cba62591204'.
+2025-04-25 19:46:18.814 | INFO     | app.main:chat_endpoint:243 - [ReqID: req_ba501fe9] Successfully processed chat request in 3.4518 seconds.
+2025-04-25 19:46:28.644 | INFO     | app.main:chat_endpoint:143 - [ReqID: req_4ea795b0] Received chat request: 'i feel fucking lonely...'
+2025-04-25 19:46:28.645 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:46:28.646 | INFO     | app.main:chat_endpoint:170 - [ReqID: req_4ea795b0] Cache miss or invalid data. Processing request...
+2025-04-25 19:46:28.647 | INFO     | app.utils:wrapper:76 - Starting 'Emotion Analysis'...
+2025-04-25 19:46:28.748 | INFO     | app.emotion_pipeline:analyze_emotions:108 - Emotion analysis for text 'i feel fucking lonely...': Primary=sadness (0.994), Intensity=9.9
+2025-04-25 19:46:28.750 | INFO     | app.utils:wrapper:86 - 'Emotion Analysis' completed successfully in 0.1036 seconds.
+2025-04-25 19:46:28.751 | INFO     | app.utils:wrapper:76 - Starting 'Gemini LLM Call'...
+2025-04-25 19:46:30.973 | INFO     | app.llm_service:generate_emotional_response:101 - Received response from Gemini (gemini-2.0-flash): 'I hear you. Feeling that intensely lonely can be incredibly painful. I...'
+2025-04-25 19:46:30.974 | INFO     | app.utils:wrapper:86 - 'Gemini LLM Call' completed successfully in 2.2234 seconds.
+2025-04-25 19:46:30.974 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:46:30.975 | INFO     | app.main:chat_endpoint:232 - [ReqID: req_4ea795b0] Response cached successfully for key 'chat_resp_v1.1:f03326b66f11633ad2586fbad3c0ac82ab01398a2ca1c4e8165bf9b47f9c4edb'.
+2025-04-25 19:46:30.975 | INFO     | app.main:chat_endpoint:243 - [ReqID: req_4ea795b0] Successfully processed chat request in 2.3312 seconds.
+2025-04-25 19:53:18.139 | INFO     | app.main:chat_endpoint:143 - [ReqID: req_fb75f2ef] Received chat request: 'hey sweethear...'
+2025-04-25 19:53:18.143 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:53:18.144 | INFO     | app.main:chat_endpoint:170 - [ReqID: req_fb75f2ef] Cache miss or invalid data. Processing request...
+2025-04-25 19:53:18.144 | INFO     | app.utils:wrapper:76 - Starting 'Emotion Analysis'...
+2025-04-25 19:53:18.559 | INFO     | app.emotion_pipeline:analyze_emotions:108 - Emotion analysis for text 'hey sweethear...': Primary=joy (0.784), Intensity=7.8
+2025-04-25 19:53:18.560 | INFO     | app.utils:wrapper:86 - 'Emotion Analysis' completed successfully in 0.4160 seconds.
+2025-04-25 19:53:18.560 | INFO     | app.utils:wrapper:76 - Starting 'Gemini LLM Call'...
+2025-04-25 19:53:20.792 | INFO     | app.llm_service:generate_emotional_response:101 - Received response from Gemini (gemini-2.0-flash): 'Hey there! That's so sweet of you to say. How can I brighten your day ...'
+2025-04-25 19:53:20.795 | INFO     | app.utils:wrapper:86 - 'Gemini LLM Call' completed successfully in 2.2352 seconds.
+2025-04-25 19:53:20.796 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:53:20.796 | INFO     | app.main:chat_endpoint:232 - [ReqID: req_fb75f2ef] Response cached successfully for key 'chat_resp_v1.1:12256dc28039947f75e84b44ad35609d53afb42566f10c5f77f3bc004f51f643'.
+2025-04-25 19:53:20.797 | INFO     | app.main:chat_endpoint:243 - [ReqID: req_fb75f2ef] Successfully processed chat request in 2.6582 seconds.
+2025-04-25 19:53:28.852 | INFO     | app.main:chat_endpoint:143 - [ReqID: req_ff65470b] Received chat request: 'can we fuck...'
+2025-04-25 19:53:28.853 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:53:28.853 | INFO     | app.main:chat_endpoint:170 - [ReqID: req_ff65470b] Cache miss or invalid data. Processing request...
+2025-04-25 19:53:28.855 | INFO     | app.utils:wrapper:76 - Starting 'Emotion Analysis'...
+2025-04-25 19:53:28.943 | INFO     | app.emotion_pipeline:analyze_emotions:108 - Emotion analysis for text 'can we fuck...': Primary=anger (0.954), Intensity=9.5
+2025-04-25 19:53:28.944 | INFO     | app.utils:wrapper:86 - 'Emotion Analysis' completed successfully in 0.0891 seconds.
+2025-04-25 19:53:28.944 | INFO     | app.utils:wrapper:76 - Starting 'Gemini LLM Call'...
+2025-04-25 19:53:31.196 | INFO     | app.llm_service:generate_emotional_response:101 - Received response from Gemini (gemini-2.0-flash): 'I understand you're expressing a desire for intimacy, but I'm designed...'
+2025-04-25 19:53:31.197 | INFO     | app.utils:wrapper:86 - 'Gemini LLM Call' completed successfully in 2.2529 seconds.
+2025-04-25 19:53:31.198 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 19:53:31.199 | INFO     | app.main:chat_endpoint:232 - [ReqID: req_ff65470b] Response cached successfully for key 'chat_resp_v1.1:69ae784dc39b423a09ea562b4b43472a74a1b4075f73c8c621ac87fcf34eff99'.
+2025-04-25 19:53:31.199 | INFO     | app.main:chat_endpoint:243 - [ReqID: req_ff65470b] Successfully processed chat request in 2.3466 seconds.
+2025-04-25 20:01:51.887 | INFO     | app.main:chat_endpoint:143 - [ReqID: req_47a73eab] Received chat request: 'hey...'
+2025-04-25 20:01:51.897 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 20:01:51.898 | INFO     | app.main:chat_endpoint:170 - [ReqID: req_47a73eab] Cache miss or invalid data. Processing request...
+2025-04-25 20:01:51.900 | INFO     | app.utils:wrapper:76 - Starting 'Emotion Analysis'...
+2025-04-25 20:01:52.702 | INFO     | app.emotion_pipeline:analyze_emotions:108 - Emotion analysis for text 'hey...': Primary=neutral (0.805), Intensity=8.1
+2025-04-25 20:01:52.703 | INFO     | app.utils:wrapper:86 - 'Emotion Analysis' completed successfully in 0.8035 seconds.
+2025-04-25 20:01:52.703 | INFO     | app.utils:wrapper:76 - Starting 'Gemini LLM Call'...
+2025-04-25 20:01:55.005 | INFO     | app.llm_service:generate_emotional_response:101 - Received response from Gemini (gemini-2.0-flash): 'Hey there! How can I help you today?...'
+2025-04-25 20:01:55.006 | INFO     | app.utils:wrapper:86 - 'Gemini LLM Call' completed successfully in 2.3021 seconds.
+2025-04-25 20:01:55.006 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 20:01:55.006 | INFO     | app.main:chat_endpoint:232 - [ReqID: req_47a73eab] Response cached successfully for key 'chat_resp_v1.1:fa690b82061edfd2852629aeba8a8977b57e40fcb77d1a7a28b26cba62591204'.
+2025-04-25 20:01:55.007 | INFO     | app.main:chat_endpoint:243 - [ReqID: req_47a73eab] Successfully processed chat request in 3.1198 seconds.
+2025-04-25 20:25:28.886 | INFO     | app.main:chat_endpoint:143 - [ReqID: req_5d82e9eb] Received chat request: 'hey...'
+2025-04-25 20:25:28.890 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 20:25:28.891 | INFO     | app.main:chat_endpoint:170 - [ReqID: req_5d82e9eb] Cache miss or invalid data. Processing request...
+2025-04-25 20:25:28.892 | INFO     | app.utils:wrapper:76 - Starting 'Emotion Analysis'...
+2025-04-25 20:25:29.346 | INFO     | app.emotion_pipeline:analyze_emotions:108 - Emotion analysis for text 'hey...': Primary=neutral (0.805), Intensity=8.1
+2025-04-25 20:25:29.348 | INFO     | app.utils:wrapper:86 - 'Emotion Analysis' completed successfully in 0.4557 seconds.
+2025-04-25 20:25:29.348 | INFO     | app.utils:wrapper:76 - Starting 'Gemini LLM Call'...
+2025-04-25 20:25:31.557 | INFO     | app.llm_service:generate_emotional_response:101 - Received response from Gemini (gemini-2.0-flash): 'Hey there! How can I help you today?...'
+2025-04-25 20:25:31.557 | INFO     | app.utils:wrapper:86 - 'Gemini LLM Call' completed successfully in 2.2067 seconds.
+2025-04-25 20:25:31.557 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 20:25:31.557 | INFO     | app.main:chat_endpoint:232 - [ReqID: req_5d82e9eb] Response cached successfully for key 'chat_resp_v1.1:fa690b82061edfd2852629aeba8a8977b57e40fcb77d1a7a28b26cba62591204'.
+2025-04-25 20:25:31.558 | INFO     | app.main:chat_endpoint:243 - [ReqID: req_5d82e9eb] Successfully processed chat request in 2.6692 seconds.
+2025-04-25 20:26:25.701 | INFO     | app.main:chat_endpoint:143 - [ReqID: req_cd9fe362] Received chat request: 'hey'...'
+2025-04-25 20:26:25.703 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 20:26:25.704 | INFO     | app.main:chat_endpoint:170 - [ReqID: req_cd9fe362] Cache miss or invalid data. Processing request...
+2025-04-25 20:26:25.705 | INFO     | app.utils:wrapper:76 - Starting 'Emotion Analysis'...
+2025-04-25 20:26:26.111 | INFO     | app.emotion_pipeline:analyze_emotions:108 - Emotion analysis for text 'hey'...': Primary=joy (0.512), Intensity=5.1
+2025-04-25 20:26:26.112 | INFO     | app.utils:wrapper:86 - 'Emotion Analysis' completed successfully in 0.4067 seconds.
+2025-04-25 20:26:26.112 | INFO     | app.utils:wrapper:76 - Starting 'Gemini LLM Call'...
+2025-04-25 20:26:28.258 | INFO     | app.llm_service:generate_emotional_response:101 - Received response from Gemini (gemini-2.0-flash): 'Hey there! I'm glad to connect with you. How can I brighten your day o...'
+2025-04-25 20:26:28.259 | INFO     | app.utils:wrapper:86 - 'Gemini LLM Call' completed successfully in 2.1470 seconds.
+2025-04-25 20:26:28.259 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 20:26:28.260 | INFO     | app.main:chat_endpoint:232 - [ReqID: req_cd9fe362] Response cached successfully for key 'chat_resp_v1.1:5df5f9ce19029f724c48a51c7ac3fd22c7f4700fef5c4d3659848d88752335fd'.
+2025-04-25 20:26:28.260 | INFO     | app.main:chat_endpoint:243 - [ReqID: req_cd9fe362] Successfully processed chat request in 2.5586 seconds.
+2025-04-25 20:28:13.605 | INFO     | app.main:chat_endpoint:143 - [ReqID: req_c5a33b27] Received chat request: 'hey im feeling super loneley as fuck...'
+2025-04-25 20:28:13.616 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 20:28:13.618 | INFO     | app.main:chat_endpoint:170 - [ReqID: req_c5a33b27] Cache miss or invalid data. Processing request...
+2025-04-25 20:28:13.621 | INFO     | app.utils:wrapper:76 - Starting 'Emotion Analysis'...
+2025-04-25 20:28:14.895 | INFO     | app.emotion_pipeline:analyze_emotions:108 - Emotion analysis for text 'hey im feeling super loneley as fuck...': Primary=sadness (0.924), Intensity=9.2
+2025-04-25 20:28:14.902 | INFO     | app.utils:wrapper:86 - 'Emotion Analysis' completed successfully in 1.2818 seconds.
+2025-04-25 20:28:14.903 | INFO     | app.utils:wrapper:76 - Starting 'Gemini LLM Call'...
+2025-04-25 20:28:17.430 | INFO     | app.llm_service:generate_emotional_response:101 - Received response from Gemini (gemini-2.0-flash): 'I'm truly sorry to hear you're feeling so incredibly lonely. That's a ...'
+2025-04-25 20:28:17.430 | INFO     | app.utils:wrapper:86 - 'Gemini LLM Call' completed successfully in 2.5277 seconds.
+2025-04-25 20:28:17.431 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 20:28:17.431 | INFO     | app.main:chat_endpoint:232 - [ReqID: req_c5a33b27] Response cached successfully for key 'chat_resp_v1.1:07f37a8455cccd6f9f9c0cbe07cbbcbc59bf2fc15cf144769db657bad599ee6e'.
+2025-04-25 20:28:17.431 | INFO     | app.main:chat_endpoint:243 - [ReqID: req_c5a33b27] Successfully processed chat request in 3.8262 seconds.
+2025-04-25 20:29:31.752 | INFO     | app.main:chat_endpoint:143 - [ReqID: req_beb88854] Received chat request: 'heyy buudy...'
+2025-04-25 20:29:31.757 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 20:29:31.759 | INFO     | app.main:chat_endpoint:170 - [ReqID: req_beb88854] Cache miss or invalid data. Processing request...
+2025-04-25 20:29:31.760 | INFO     | app.utils:wrapper:76 - Starting 'Emotion Analysis'...
+2025-04-25 20:29:32.703 | INFO     | app.emotion_pipeline:analyze_emotions:108 - Emotion analysis for text 'heyy buudy...': Primary=joy (0.459), Intensity=4.6
+2025-04-25 20:29:32.703 | INFO     | app.utils:wrapper:86 - 'Emotion Analysis' completed successfully in 0.9435 seconds.
+2025-04-25 20:29:32.704 | INFO     | app.utils:wrapper:76 - Starting 'Gemini LLM Call'...
+2025-04-25 20:29:34.742 | INFO     | app.llm_service:generate_emotional_response:101 - Received response from Gemini (gemini-2.0-flash): 'Hey buddy! What's up? 😊...'
+2025-04-25 20:29:34.743 | INFO     | app.utils:wrapper:86 - 'Gemini LLM Call' completed successfully in 2.0393 seconds.
+2025-04-25 20:29:34.743 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 20:29:34.744 | INFO     | app.main:chat_endpoint:232 - [ReqID: req_beb88854] Response cached successfully for key 'chat_resp_v1.1:592016c7b1a9dab83a41db7f10234e19722bff750965810a68797a0c0ac740e7'.
+2025-04-25 20:29:34.744 | INFO     | app.main:chat_endpoint:243 - [ReqID: req_beb88854] Successfully processed chat request in 2.9924 seconds.
+2025-04-25 20:31:24.441 | INFO     | app.main:lifespan:31 - Application shutdown sequence initiated...
+2025-04-25 20:31:24.445 | INFO     | app.main:lifespan:34 - Application shutdown sequence completed.

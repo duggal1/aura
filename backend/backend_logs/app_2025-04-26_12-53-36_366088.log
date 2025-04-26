@@ -1,0 +1,7 @@
+2025-04-26 12:53:44.266 | INFO     | app.main:lifespan:14 - Starting application...
+2025-04-26 12:53:44.271 | INFO     | app.logging_setup:start_metrics_server:76 - Prometheus metrics server started on port 8001
+2025-04-26 12:53:44.273 | INFO     | app.cache:init_redis_pool:27 - Successfully connected to Redis at redis://localhost:6379/0
+2025-04-26 12:53:47.495 | INFO     | app.emotion_pipeline:load_models:47 - Loaded emotion model labels: ['anger', 'disgust', 'fear', 'joy', 'neutral', 'sadness', 'surprise']
+2025-04-26 12:53:47.529 | INFO     | app.llm_service:configure_genai:16 - Google GenAI client configured.
+2025-04-26 12:53:47.531 | INFO     | app.main:lifespan:22 - Redis cache cleared on startup.
+2025-04-26 12:53:47.531 | INFO     | app.main:lifespan:25 - Startup complete.

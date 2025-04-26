@@ -1,0 +1,5 @@
+2025-04-26 02:07:08.467 | INFO     | app.main:lifespan:15 - Starting application...
+2025-04-26 02:07:08.476 | INFO     | app.logging_setup:start_metrics_server:81 - Prometheus metrics server started on port 8001
+2025-04-26 02:07:08.485 | INFO     | app.cache:init_redis_pool:23 - Successfully connected to Redis at redis://localhost:6379/0
+2025-04-26 02:07:53.444 | INFO     | app.llm_service:configure_genai:25 - Google GenAI client configured.
+2025-04-26 02:07:53.445 | INFO     | app.main:lifespan:24 - Startup complete.

@@ -1,0 +1,41 @@
+2025-04-26 00:25:56.426 | INFO     | app.main:lifespan:15 - Starting application...
+2025-04-26 00:25:56.432 | INFO     | app.logging_setup:start_metrics_server:81 - Prometheus metrics server started on port 8001
+2025-04-26 00:25:56.436 | ERROR    | app.cache:init_redis_pool:24 - Failed to connect to Redis (via redis-py) at redis://redis:6379/0: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2025-04-26 00:27:19.785 | INFO     | app.emotion_pipeline:load_emotion_model:66 - Loaded models on device 0.
+2025-04-26 00:27:19.870 | INFO     | app.llm_service:configure_genai:19 - Google Generative AI client configured. SDK version: 1.12.1
+2025-04-26 00:27:19.870 | INFO     | app.main:lifespan:20 - Startup complete.
+2025-04-26 00:29:28.717 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_50726bc2] Chat request: 'I was standing on the cliff’s edge last night, the...'
+2025-04-26 00:29:28.721 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-26 00:29:28.722 | INFO     | app.utils:wrapper:76 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 00:29:34.414 | WARNING  | app.emotion_pipeline:analyze_emotions:119 - LLM refine failed, fallback to dist.
+2025-04-26 00:29:34.417 | INFO     | app.utils:wrapper:86 - 'Advanced Emotion Analysis' completed successfully in 5.6954 seconds.
+2025-04-26 00:29:34.419 | INFO     | app.utils:wrapper:76 - Starting 'Emotionally Intelligent LLM Call'...
+2025-04-26 00:29:37.338 | INFO     | app.llm_service:generate_emotional_response:86 - Final emotional response preview: 'Oh, honey, standing on that cliff, feeling the ghost of freedom only t...'
+2025-04-26 00:29:37.338 | INFO     | app.utils:wrapper:86 - 'Emotionally Intelligent LLM Call' completed successfully in 2.9194 seconds.
+2025-04-26 00:29:37.339 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-26 00:29:37.339 | INFO     | app.main:chat_endpoint:135 - [ReqID: req_50726bc2] Response cached.
+2025-04-26 00:29:37.340 | INFO     | app.main:chat_endpoint:142 - [ReqID: req_50726bc2] Processed in 8.6230s.
+2025-04-26 00:31:25.621 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_704f6834] Chat request: 'hey how u doing...'
+2025-04-26 00:31:25.628 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-26 00:31:25.628 | INFO     | app.utils:wrapper:76 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 00:31:30.155 | WARNING  | app.emotion_pipeline:analyze_emotions:119 - LLM refine failed, fallback to dist.
+2025-04-26 00:31:30.156 | INFO     | app.utils:wrapper:86 - 'Advanced Emotion Analysis' completed successfully in 4.5281 seconds.
+2025-04-26 00:31:30.157 | INFO     | app.utils:wrapper:76 - Starting 'Emotionally Intelligent LLM Call'...
+2025-04-26 00:31:32.334 | INFO     | app.llm_service:generate_emotional_response:86 - Final emotional response preview: 'I'm doing well, basking in a sense of calm and readiness, just like th...'
+2025-04-26 00:31:32.335 | INFO     | app.utils:wrapper:86 - 'Emotionally Intelligent LLM Call' completed successfully in 2.1779 seconds.
+2025-04-26 00:31:32.335 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-26 00:31:32.335 | INFO     | app.main:chat_endpoint:135 - [ReqID: req_704f6834] Response cached.
+2025-04-26 00:31:32.336 | INFO     | app.main:chat_endpoint:142 - [ReqID: req_704f6834] Processed in 6.7145s.
+2025-04-26 00:31:52.361 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_3864f96e] Chat request: 'idk im feeling lonely...'
+2025-04-26 00:31:52.362 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-26 00:31:52.363 | INFO     | app.utils:wrapper:76 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 00:31:56.727 | WARNING  | app.emotion_pipeline:analyze_emotions:119 - LLM refine failed, fallback to dist.
+2025-04-26 00:31:56.731 | INFO     | app.utils:wrapper:86 - 'Advanced Emotion Analysis' completed successfully in 4.3679 seconds.
+2025-04-26 00:31:56.731 | INFO     | app.utils:wrapper:76 - Starting 'Emotionally Intelligent LLM Call'...
+2025-04-26 00:31:59.280 | INFO     | app.llm_service:generate_emotional_response:86 - Final emotional response preview: 'Oh, darling, loneliness is a heavy cloak to wear, isn't it? It seeps i...'
+2025-04-26 00:31:59.281 | INFO     | app.utils:wrapper:86 - 'Emotionally Intelligent LLM Call' completed successfully in 2.5499 seconds.
+2025-04-26 00:31:59.282 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-26 00:31:59.282 | INFO     | app.main:chat_endpoint:135 - [ReqID: req_3864f96e] Response cached.
+2025-04-26 00:31:59.283 | INFO     | app.main:chat_endpoint:142 - [ReqID: req_3864f96e] Processed in 6.9222s.
+2025-04-26 00:34:10.696 | INFO     | app.main:lifespan:22 - Shutting down...
+2025-04-26 00:34:10.697 | INFO     | app.main:lifespan:24 - Shutdown complete.

@@ -1,0 +1,3 @@
+2025-04-26 01:22:33.495 | INFO     | app.main:lifespan:15 - Starting application...
+2025-04-26 01:22:33.505 | INFO     | app.logging_setup:start_metrics_server:81 - Prometheus metrics server started on port 8001
+2025-04-26 01:22:33.508 | ERROR    | app.cache:init_redis_pool:24 - Failed to connect to Redis (via redis-py) at redis://redis:6379/0: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.

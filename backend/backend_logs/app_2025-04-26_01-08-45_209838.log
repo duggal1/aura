@@ -1,0 +1,15 @@
+2025-04-26 01:08:53.284 | INFO     | app.main:lifespan:15 - Starting application...
+2025-04-26 01:08:53.289 | INFO     | app.logging_setup:start_metrics_server:81 - Prometheus metrics server started on port 8001
+2025-04-26 01:08:53.294 | ERROR    | app.cache:init_redis_pool:24 - Failed to connect to Redis (via redis-py) at redis://redis:6379/0: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2025-04-26 01:08:58.592 | INFO     | app.emotion_pipeline:load_emotion_model:85 - Loaded models on device 0.
+2025-04-26 01:08:58.636 | INFO     | app.llm_service:configure_genai:19 - Google Generative AI client configured. SDK version: 1.12.1
+2025-04-26 01:08:58.637 | INFO     | app.main:lifespan:20 - Startup complete.
+2025-04-26 01:08:58.655 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_b0eb6638] Chat request: 'I was standing on the cliff’s edge last night, the...'
+2025-04-26 01:08:58.655 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-26 01:08:58.655 | INFO     | app.utils:wrapper:76 - Starting 'Advanced Emotion Analysis'...
+2025-04-26 01:08:59.068 | INFO     | app.utils:wrapper:86 - 'Advanced Emotion Analysis' failed with ValidationError in 0.4125 seconds.
+2025-04-26 01:08:59.069 | ERROR    | app.main:chat_endpoint:101 - [ReqID: req_b0eb6638] Emotion analysis error: 1 validation error for EmotionAnalysisResult
+intensity
+  Input should be a valid number [type=float_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/float_type
+2025-04-26 01:10:19.467 | INFO     | app.main:lifespan:22 - Shutting down...

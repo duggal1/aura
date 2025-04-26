@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+redis
+transformers[torch]
+torch
+google-generativeai
+pydantic[dotenv]
+pydantic-settings
+loguru
+prometheus-client
+httpx
+python-dotenv
+websockets
+torchvision
+gradio
+gradio-client
+tomlkit

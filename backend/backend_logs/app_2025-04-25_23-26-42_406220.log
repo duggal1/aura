@@ -1,0 +1,43 @@
+2025-04-25 23:26:50.008 | INFO     | app.main:lifespan:15 - Starting application...
+2025-04-25 23:26:50.013 | INFO     | app.logging_setup:start_metrics_server:81 - Prometheus metrics server started on port 8001
+2025-04-25 23:26:50.017 | ERROR    | app.cache:init_redis_pool:24 - Failed to connect to Redis (via redis-py) at redis://redis:6379/0: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2025-04-25 23:26:51.694 | INFO     | app.emotion_pipeline:load_emotion_model:39 - Loaded emotion model on device 0.
+2025-04-25 23:26:51.917 | INFO     | app.llm_service:configure_genai:15 - GenAI client configured, version 1.12.1
+2025-04-25 23:26:51.917 | INFO     | app.main:lifespan:20 - Startup complete.
+2025-04-25 23:28:07.086 | INFO     | app.main:chat_endpoint:74 - [ReqID: req_b81c34e4] Chat request: 'hey how you doin...'
+2025-04-25 23:28:07.087 | ERROR    | app.cache:get_redis:42 - Redis pool is not initialized or connection failed.
+2025-04-25 23:28:07.088 | INFO     | app.utils:wrapper:76 - Starting 'Advanced Emotion Analysis'...
+2025-04-25 23:28:12.146 | INFO     | app.utils:wrapper:86 - 'Advanced Emotion Analysis' completed successfully in 5.0586 seconds.
+2025-04-25 23:28:12.147 | INFO     | app.utils:wrapper:76 - Starting 'Emotionally Intelligent LLM Call'...
+2025-04-25 23:28:14.299 | INFO     | app.utils:wrapper:86 - 'Emotionally Intelligent LLM Call' failed with ValidationError in 2.1524 seconds.
+2025-04-25 23:28:14.300 | WARNING  | app.utils:wrapper:29 - Attempt 1/4 failed for generate_emotional_response. Error: ValidationError: 1 validation error for GenerateContentConfig
+stream
+  Extra inputs are not permitted [type=extra_forbidden, input_value=True, input_type=bool]
+    For further information visit https://errors.pydantic.dev/2.9/v/extra_forbidden. Retrying in 1.00s...
+2025-04-25 23:28:15.301 | INFO     | app.utils:wrapper:76 - Starting 'Emotionally Intelligent LLM Call'...
+2025-04-25 23:28:16.011 | INFO     | app.utils:wrapper:86 - 'Emotionally Intelligent LLM Call' failed with ValidationError in 0.7100 seconds.
+2025-04-25 23:28:16.012 | WARNING  | app.utils:wrapper:29 - Attempt 2/4 failed for generate_emotional_response. Error: ValidationError: 1 validation error for GenerateContentConfig
+stream
+  Extra inputs are not permitted [type=extra_forbidden, input_value=True, input_type=bool]
+    For further information visit https://errors.pydantic.dev/2.9/v/extra_forbidden. Retrying in 1.50s...
+2025-04-25 23:28:17.515 | INFO     | app.utils:wrapper:76 - Starting 'Emotionally Intelligent LLM Call'...
+2025-04-25 23:28:18.492 | INFO     | app.utils:wrapper:86 - 'Emotionally Intelligent LLM Call' failed with ValidationError in 0.9774 seconds.
+2025-04-25 23:28:18.493 | WARNING  | app.utils:wrapper:29 - Attempt 3/4 failed for generate_emotional_response. Error: ValidationError: 1 validation error for GenerateContentConfig
+stream
+  Extra inputs are not permitted [type=extra_forbidden, input_value=True, input_type=bool]
+    For further information visit https://errors.pydantic.dev/2.9/v/extra_forbidden. Retrying in 2.25s...
+2025-04-25 23:28:20.745 | INFO     | app.utils:wrapper:76 - Starting 'Emotionally Intelligent LLM Call'...
+2025-04-25 23:28:21.815 | INFO     | app.utils:wrapper:86 - 'Emotionally Intelligent LLM Call' failed with ValidationError in 1.0697 seconds.
+2025-04-25 23:28:21.816 | WARNING  | app.utils:wrapper:29 - Attempt 4/4 failed for generate_emotional_response. Error: ValidationError: 1 validation error for GenerateContentConfig
+stream
+  Extra inputs are not permitted [type=extra_forbidden, input_value=True, input_type=bool]
+    For further information visit https://errors.pydantic.dev/2.9/v/extra_forbidden. Retrying in 3.38s...
+2025-04-25 23:28:21.816 | ERROR    | app.utils:wrapper:37 - All 4 retry attempts failed for generate_emotional_response. Last error: ValidationError: 1 validation error for GenerateContentConfig
+stream
+  Extra inputs are not permitted [type=extra_forbidden, input_value=True, input_type=bool]
+    For further information visit https://errors.pydantic.dev/2.9/v/extra_forbidden
+2025-04-25 23:28:21.817 | ERROR    | app.main:chat_endpoint:119 - [ReqID: req_b81c34e4] LLM error: 1 validation error for GenerateContentConfig
+stream
+  Extra inputs are not permitted [type=extra_forbidden, input_value=True, input_type=bool]
+    For further information visit https://errors.pydantic.dev/2.9/v/extra_forbidden
+2025-04-25 23:31:38.547 | INFO     | app.main:lifespan:22 - Shutting down...
