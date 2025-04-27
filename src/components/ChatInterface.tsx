@@ -34,7 +34,7 @@ interface Message {
 }
 
 // --- Constants ---
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://aura-backend-44ca.onrender.com';
 
 // --- Theme Context (Still present but unused directly in this component) ---
 
