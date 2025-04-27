@@ -2,10 +2,10 @@
 
 import React, { useState, useEffect, ReactNode, useRef } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Ensure ScrollTrigger is imported
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Sparkles, Zap, ChevronRight } from 'lucide-react';
-import ChatInterface from '@/components/ChatInterface'; // Restored original import
-import { AuroraText } from '@/components/magicui/aurora-text'; // Restored original import
+import ChatInterface from '@/components/ChatInterface'; 
+import { AuroraText } from '@/components/magicui/aurora-text'; 
 
 
 // Utility for class name concatenation
